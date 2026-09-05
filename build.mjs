@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(await readFile(join(root, 'site.json'), 'utf8'));
+const cv = JSON.parse(await readFile(join(root, 'cv.json'), 'utf8'));
 const base = config.url.replace(/\/$/, '');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const urls = {
@@ -22,12 +23,19 @@ const urls = {
 const text = {
   en: {
     name: 'Dmitry Pronin', nav: ['Research', 'Publications', 'Writing', 'Contact'],
-    skip: 'Skip to content', eyebrow: 'DIGITAL HUMANITIES · HSE UNIVERSITY',
-    title: 'Understanding literary style,\none word at a time.',
-    intro: 'I study literary style and develop interpretable methods for computational text analysis. My work connects stylometry, authorship attribution, and digital humanities.',
+    skip: 'Skip to content', eyebrow: 'Digital Humanities · HSE University',
+    title: 'Interpretable\ncomputational stylistics',
+    intro: 'I study how writers’ styles differ and which words account for those differences. I develop methods that let us trace statistical results back to specific features of a text.',
     see: 'Explore the research', about: 'About',
-    bio: 'I work at HSE University, where my current position is programmer at the School of Philological Studies, Faculty of Humanities. My research asks how quantitative methods distinguish texts — and how we can explain the differences they find.',
-    bio2: 'Together with Evgeny Kazartsev, I work on interpretable stylometric methods. I also write practical guides and explain digital humanities research for a wider audience.',
+    bio: 'I am a programmer and visiting lecturer at HSE University’s School of Philological Studies, Faculty of Humanities. I develop research software and teach on the Literature and Digital Humanities course.',
+    bio2: 'Together with Evgeny Kazartsev, I work on interpretable stylometric methods. I also contribute to SOCIOLIT and PROZIMETRON and write practical guides to computational text analysis.',
+    cv: 'CV', cvLink: 'Academic CV', portraitAlt: 'Dmitry Pronin holding a camera outdoors',
+    platformLabel: 'Research platform', platformTitle: 'SOCIOLIT',
+    platformIntro: 'Tools for studying Russian literature and its relationship with society.',
+    platformBody: 'SOCIOLIT is a project of HSE University’s School of Philological Studies. It brings together texts and tools for exploring word use, comparing corpora, and analysing sentiment through a web interface.',
+    platformRole: 'As a core developer, I work on analytical modules, corpus processing, APIs, and interfaces for researchers.',
+    platformFeatures: ['Search for words and lemmas in literary corpora', 'Compare word distributions across groups of texts', 'Explore word frequencies and the emotional tone of a text'],
+    platformLink: 'Explore SOCIOLIT',
     affiliation: 'HSE University', location: 'School of Philological Studies',
     research: 'Research, explained', researchSub: 'The question, the method, and the words behind the result.',
     rankQ: 'Which words make two texts different?',
@@ -45,7 +53,7 @@ const text = {
       ['Notes from Digital Humanities 2026', 'Conference report · August 2026', 'https://sysblok.ru/blog/blog_dmitrii_pronin/obuchaja-ii-my-uchimsja-o-chem-govorili-na-glavnoj-mirovoj-konferencii-po-cifrovym-gumanitarnym-naukam/'],
     ],
     allWriting: 'All writing on System Block', contact: 'Let’s talk about texts.',
-    contactBody: 'For research conversations, teaching, and questions about the methods, you can find me on Telegram or through my HSE profile.',
+    contactBody: 'For questions about my research, collaboration, or teaching, email me at the address below. You can also find me on Telegram.',
     updated: 'Updated September 2026', back: 'All research', question: 'The question', method: 'The approach',
     figure: 'Reading the figure', limits: 'What the result can tell us', start: 'Try it on your texts',
     next: 'Related research', bib: 'Citation', copy: 'Copy BibTeX', copied: 'Copied',
@@ -53,12 +61,19 @@ const text = {
   },
   ru: {
     name: 'Дмитрий Пронин', nav: ['Исследования', 'Публикации', 'Материалы', 'Контакты'],
-    skip: 'Перейти к содержанию', eyebrow: 'ЦИФРОВАЯ ГУМАНИТАРИСТИКА · НИУ ВШЭ',
-    title: 'Понять авторский стиль —\nот текста к словам.',
-    intro: 'Исследую литературный стиль и разрабатываю объяснимые методы компьютерного анализа текста. Работаю на пересечении стилометрии, атрибуции авторства и цифровой гуманитаристики.',
+    skip: 'Перейти к содержанию', eyebrow: 'Digital Humanities · НИУ ВШЭ',
+    title: 'Интерпретируемая\nцифровая стилистика',
+    intro: 'Изучаю, чем различается стиль писателей и какие слова создают эти различия. Разрабатываю методы анализа, которые позволяют проследить путь от статистического результата к конкретным особенностям текста.',
     see: 'Посмотреть исследования', about: 'Обо мне',
-    bio: 'Работаю в НИУ ВШЭ — программистом Школы филологических наук факультета гуманитарных наук. В исследованиях меня интересует, как количественные методы различают тексты и как объяснить найденные различия.',
-    bio2: 'Вместе с Евгением Казарцевым занимаюсь объяснимыми методами стилометрии. Пишу практические руководства и рассказываю о цифровой гуманитаристике широкой аудитории.',
+    bio: 'Работаю программистом и приглашённым преподавателем Школы филологических наук факультета гуманитарных наук НИУ ВШЭ. Разрабатываю исследовательские инструменты и участвую в преподавании курса «Литература и цифровая гуманитаристика».',
+    bio2: 'Вместе с Евгением Казарцевым занимаюсь интерпретируемыми методами стилометрии. Участвую в разработке СОЦИОЛИТа и ПРОЗИМЕТРОНа, пишу практические руководства по компьютерному анализу текста.',
+    cv: 'CV', cvLink: 'Академическое резюме', portraitAlt: 'Дмитрий Пронин с фотоаппаратом на улице',
+    platformLabel: 'Исследовательская платформа', platformTitle: 'СОЦИОЛИТ',
+    platformIntro: 'Инструменты для изучения русской литературы и её связи с обществом.',
+    platformBody: 'СОЦИОЛИТ — проект Школы филологических наук НИУ ВШЭ. Платформа объединяет тексты и инструменты, с помощью которых можно изучать словоупотребление, сравнивать корпуса и анализировать тональность произведений через веб-интерфейс.',
+    platformRole: 'Как один из основных разработчиков, занимаюсь аналитическими модулями, обработкой корпусов, API и интерфейсами для исследователей.',
+    platformFeatures: ['Поиск слов и лемм в литературных корпусах', 'Сравнение распределений слов в группах текстов', 'Изучение частот слов и эмоциональной тональности текста'],
+    platformLink: 'Открыть СОЦИОЛИТ',
     affiliation: 'НИУ ВШЭ', location: 'Школа филологических наук',
     research: 'Как устроены мои исследования', researchSub: 'Вопрос, метод и конкретные слова за результатом анализа.',
     rankQ: 'Какие слова делают тексты разными?',
@@ -76,7 +91,7 @@ const text = {
       ['Обучая ИИ, мы учимся: о чём говорили на DH2026', 'Репортаж с конференции · август 2026', 'https://sysblok.ru/blog/blog_dmitrii_pronin/obuchaja-ii-my-uchimsja-o-chem-govorili-na-glavnoj-mirovoj-konferencii-po-cifrovym-gumanitarnym-naukam/'],
     ],
     allWriting: 'Все тексты в «Системном Блоке»', contact: 'Давайте поговорим о текстах.',
-    contactBody: 'По вопросам исследований, обучения и применения методов со мной можно связаться в Telegram или через профиль ВШЭ.',
+    contactBody: 'По вопросам исследований, совместных проектов и преподавания напишите мне на электронную почту. Также со мной можно связаться в Telegram.',
     updated: 'Обновлено в сентябре 2026', back: 'Все исследования', question: 'Исследовательский вопрос', method: 'Как устроен подход',
     figure: 'Как читать график', limits: 'Что можно заключить', start: 'Попробовать на своих текстах',
     next: 'Ещё одно исследование', bib: 'Как цитировать', copy: 'Скопировать BibTeX', copied: 'Скопировано',
@@ -159,19 +174,20 @@ const research = {
 
 const pages = [];
 const home = lang => lang === 'en' ? '' : 'ru/';
-const route = (lang, key) => `${home(lang)}${key ? `research/${research[key].slug}/` : ''}`;
+const route = (lang, key) => `${home(lang)}${key === 'cv' ? 'cv/' : key ? `research/${research[key].slug}/` : ''}`;
 const link = (url, label, cls = '') => `<a${cls ? ` class="${cls}"` : ''} href="${esc(url)}">${label}</a>`;
 
 function document(lang, key, body, meta) {
   const t = text[lang], path = route(lang, key);
+  const isResearch = Boolean(key && key !== 'cv');
   const depth = path.split('/').filter(Boolean).length;
   const rel = '../'.repeat(depth) || './';
   const local = p => `${rel}${p}index.html`;
   const currentUrl = base ? `${base}/${path}` : '';
   const langs = ['en', 'ru'].map(l => `<a href="${local(route(l,key))}" lang="${l}" hreflang="${l}" ${l === lang ? 'aria-current="page"' : ''}>${l.toUpperCase()}</a>`).join('');
-  const schema = { '@context': 'https://schema.org', '@type': key ? 'WebPage' : 'ProfilePage', name: meta.title, inLanguage: lang, ...(currentUrl ? {url: currentUrl} : {}), mainEntity: { '@type': key ? 'ScholarlyArticle' : 'Person', name: key ? research[key].formal : 'Dmitry Pronin', ...(key ? {author: [{ '@type': 'Person', name:'Dmitry Pronin' }, {'@type':'Person',name:'Evgeny Kazartsev'}], sameAs: research[key].article || research[key].preprint} : {alternateName:'Дмитрий Пронин', sameAs:[urls.hse,urls.orcid,urls.scholar,urls.github], affiliation:{'@type':'Organization',name:'HSE University'}}) } };
+  const schema = { '@context': 'https://schema.org', '@type': isResearch ? 'WebPage' : 'ProfilePage', name: meta.title, inLanguage: lang, ...(currentUrl ? {url: currentUrl} : {}), mainEntity: { '@type': isResearch ? 'ScholarlyArticle' : 'Person', name: isResearch ? research[key].formal : 'Dmitry Pronin', ...(isResearch ? {author: [{ '@type': 'Person', name:'Dmitry Pronin' }, {'@type':'Person',name:'Evgeny Kazartsev'}], sameAs: research[key].article || research[key].preprint} : {alternateName:'Дмитрий Пронин', email:config.email, image:base+'/assets/dmitry-pronin.jpg', sameAs:[urls.hse,urls.orcid,urls.scholar,urls.github], affiliation:{'@type':'Organization',name:'HSE University'}}) } };
   const head = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(meta.title)}</title><meta name="description" content="${esc(meta.description)}"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:title" content="${esc(meta.title)}"><meta property="og:description" content="${esc(meta.description)}"><meta property="og:locale" content="${lang==='ru'?'ru_RU':'en_US'}">${currentUrl ? `<link rel="canonical" href="${currentUrl}"><meta property="og:url" content="${currentUrl}">` + ['en','ru'].map(l=>`<link rel="alternate" hreflang="${l}" href="${base}/${route(l,key)}">`).join('') + `<link rel="alternate" hreflang="x-default" href="${base}/${route('en',key)}">` : ''}<link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${rel}assets/style.css"><script defer src="${rel}assets/site.js"></script><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script></head>`;
-  return head + `<body><a class="skip" href="#main">${t.skip}</a><header class="header wrap"><a class="wordmark" href="${local(home(lang))}">${t.name}<span>Digital humanities</span></a><nav aria-label="${lang==='ru'?'Основная навигация':'Main navigation'}">${t.nav.map((label,i)=>link(`${local(home(lang))}#${['research','publications','writing','contact'][i]}`,label)).join('')}</nav><div class="languages" aria-label="${lang==='ru'?'Язык':'Language'}">${langs}</div></header><main id="main">${body({t,rel,local})}</main><footer class="wrap footer"><span>© 2026 ${t.name}</span><span>${t.updated}</span><div>${link(urls.orcid,'ORCID')}${link(urls.github,'GitHub')}</div></footer></body></html>`;
+  return head + `<body><a class="skip" href="#main">${t.skip}</a><header class="header wrap"><a class="wordmark" href="${local(home(lang))}">${t.name}<span>Digital Humanities</span></a><nav aria-label="${lang==='ru'?'Основная навигация':'Main navigation'}">${t.nav.slice(0,3).map((label,i)=>link(`${local(home(lang))}#${['research','publications','writing'][i]}`,label)).join('')}${link(local(route(lang,'cv')),t.cv)}${link(`${local(home(lang))}#contact`,t.nav[3])}</nav><div class="languages" aria-label="${lang==='ru'?'Язык':'Language'}">${langs}</div></header><main id="main">${body({t,rel,local})}</main><footer class="wrap footer"><span>© 2026 ${t.name}</span><span>${t.updated}</span><div>${link(urls.orcid,'ORCID')}${link(urls.github,'GitHub')}</div></footer></body></html>`;
 }
 
 function resourceLinks(r,t) {
@@ -181,13 +197,21 @@ function resourceLinks(r,t) {
 function mainPage(lang) {
   const t = text[lang];
   return document(lang, null, ({rel,local}) => `
-  <section class="hero wrap"><p class="eyebrow">${t.eyebrow}</p><h1>${t.title.split('\n').map(esc).join('<br>')}</h1><p class="intro">${t.intro}</p><div class="hero-links">${link('#research',`${t.see} <span aria-hidden="true">↓</span>`,'primary-link')}${link(urls.scholar,'Google Scholar')}${link(urls.github,'GitHub ↗')}</div></section>
+  <section class="hero wrap"><div class="hero-copy"><p class="eyebrow">${t.eyebrow}</p><h1>${t.title.split('\n').map(esc).join('<br>')}</h1><p class="intro">${t.intro}</p><div class="hero-links">${link('#research',`${t.see} <span aria-hidden="true">↓</span>`,'primary-link')}${link(local(route(lang,'cv')),t.cvLink)}${link(urls.scholar,'Google Scholar')}</div></div><figure class="portrait"><img src="${rel}assets/dmitry-pronin.jpg" alt="${t.portraitAlt}" width="3024" height="4032" fetchpriority="high"></figure></section>
   <section class="about wrap" aria-labelledby="about-title"><h2 class="section-label" id="about-title">${t.about}</h2><div><p>${t.bio}</p><p>${t.bio2}</p></div><aside>${link(urls.hse,t.affiliation)}<p>${t.location}</p>${link(urls.orcid,'ORCID ↗')}</aside></section>
   <section class="research-section wrap" id="research"><div class="section-heading"><h2>${t.research}</h2><p>${t.researchSub}</p></div>${Object.entries(research).map(([key,r],i)=>`<article class="research-row"><div class="research-number">0${i+1}</div><div class="research-copy"><p class="meta">${key==='rank'?t.journal:t.preprint}</p><h3>${link(local(route(lang,key)),key==='rank'?t.rankQ:t.gwasQ)}</h3><p>${key==='rank'?t.rankDesc:t.gwasDesc}</p><p class="method-name">${r.title}</p>${link(local(route(lang,key)),`${t.read} <span aria-hidden="true">→</span>`,'read-link')}</div><a class="research-image" href="${local(route(lang,key))}" tabindex="-1" aria-hidden="true"><img src="${rel}assets/${r.image}" alt="" width="${r.imageWidth}" height="${r.imageHeight}" loading="lazy"></a></article>`).join('')}</section>
   <section class="wrap publications-section" id="publications"><div class="section-heading"><h2>${t.publications}</h2>${link(urls.scholar,`${t.allPubs} ↗`)}</div><div class="pub-list">${Object.values(research).map(r=>`<article class="publication"><span class="year">${r.year}</span><div><h3>${link(r.article||r.preprint,r.formal)}</h3><p>${t.authors}</p><p class="venue">${r.venue}</p>${resourceLinks(r,t)}</div></article>`).join('')}<article class="publication"><span class="year">2024</span><div><h3>${lang==='ru'?'Основы цифровой филологии: методы и принципы компьютерного анализа текста':'Основы цифровой филологии: методы и принципы компьютерного анализа текста'}</h3><p>${lang==='ru'?'Евгений Казарцев и Дмитрий Пронин':'Evgeny Kazartsev and Dmitry Pronin'}</p><p class="venue">${lang==='ru'?'Санкт-Петербург: Политехника. Книга.':'St Petersburg: Politekhnika. Book in Russian.'}</p>${link(urls.scholar,lang==='ru'?'Библиография в Google Scholar':'Bibliography on Google Scholar','read-link')}</div></article></div></section>
+  <section class="platform-section wrap" id="sociolit"><div><p class="eyebrow">${t.platformLabel}</p><h2>${t.platformTitle}</h2>${link('https://sociolit.ru/',t.platformLink+' ↗','primary-link')}</div><div class="platform-copy"><p class="platform-intro">${t.platformIntro}</p><p>${t.platformBody}</p><ul>${t.platformFeatures.map(s=>`<li>${s}</li>`).join('')}</ul><p>${t.platformRole}</p></div></section>
   <section class="writing-section" id="writing"><div class="wrap"><div class="section-heading"><h2>${t.writing}</h2><p>${t.writingSub}</p></div><div class="writing-grid">${t.guides.map(([title,meta,url])=>`<article><p class="meta">${meta}</p><h3>${link(url,title+' <span aria-hidden="true">↗</span>')}</h3><p class="publication-name">${lang==='ru'?'Системный Блокъ':'System Block · In Russian'}</p></article>`).join('')}</div>${link(urls.media,`${t.allWriting} ↗`,'read-link')}</div></section>
   <section class="wrap contact-section" id="contact"><p class="eyebrow">${t.nav[3]}</p><h2>${t.contact}</h2><p>${t.contactBody}</p><div class="hero-links">${config.email?link('mailto:'+config.email,esc(config.email),'primary-link'):''}${link(urls.telegram,'Telegram ↗','primary-link')}${link(urls.hse,lang==='ru'?'Профиль ВШЭ ↗':'HSE profile ↗')}</div></section>`,
-  {title:`${t.name} — ${lang==='ru'?'стилометрия и цифровая гуманитаристика':'stylometry & digital humanities'}`,description:t.intro});
+  {title:`${t.name} — ${lang==='ru'?'стилометрия и digital humanities':'stylometry & digital humanities'}`,description:t.intro});
+}
+
+function cvPage(lang) {
+  const c=cv[lang];
+  return document(lang,'cv',({t,rel,local})=>`
+  <header class="article-header wrap cv-header">${link(local(home(lang)),lang==='ru'?'← На главную':'← Home','back-link')}<p class="eyebrow">${c.title}</p><h1>${c.name}</h1><p class="cv-tagline">${c.tagline}</p><p class="cv-affiliation">${c.affiliation}</p><div class="resource-links">${link('mailto:'+config.email,esc(config.email))}${link(urls.hse,lang==='ru'?'Профиль ВШЭ':'HSE profile')}${link(urls.scholar,'Google Scholar')}${link(urls.orcid,'ORCID')}</div><div class="cv-downloads"><a class="primary-link" href="${rel}cv-files/Dmitry-Pronin-CV-${lang.toUpperCase()}.pdf" download>${lang==='ru'?'Скачать PDF':'Download PDF'} ↓</a><a href="${rel}cv-files/Dmitry-Pronin-CV-${lang.toUpperCase()}.docx" download>${lang==='ru'?'Скачать Word':'Download Word'} ↓</a></div></header>
+  <div class="article-body wrap"><aside class="article-toc"><span class="section-label">${lang==='ru'?'В резюме':'CV contents'}</span><nav aria-label="${lang==='ru'?'Разделы резюме':'CV sections'}">${c.sections.map(s=>link('#'+s.id,s.title)).join('')}</nav></aside><div class="article-content cv-content"><section id="profile"><h2>${lang==='ru'?'Профиль':'Profile'}</h2><p class="lead">${c.profile}</p><p class="cv-interests">${c.interests}</p></section>${c.sections.map(s=>`<section id="${s.id}"><h2>${s.title}</h2>${s.entries.map(e=>`<article class="cv-entry">${e.title?`<div class="cv-entry-heading"><h3>${e.title}</h3>${e.date?`<span>${e.date}</span>`:''}</div>`:''}${e.subtitle?`<p class="cv-subtitle">${e.subtitle}</p>`:''}${e.body?`<p>${e.body}</p>`:''}${e.items?`<ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>`:''}${e.url?link(e.url,e.linkLabel+' ↗','read-link'):''}</article>`).join('')}</section>`).join('')}</div></div>`, {title:`${c.name} — ${c.title}`,description:c.profile});
 }
 
 function researchPage(lang,key) {
@@ -200,10 +224,10 @@ function researchPage(lang,key) {
 }
 
 for (const lang of ['en','ru']) {
-  for (const key of [null,'rank','gwas']) {
+  for (const key of [null,'rank','gwas','cv']) {
     const path=route(lang,key), out=join(root,path,'index.html');
     await mkdir(dirname(out),{recursive:true});
-    await writeFile(out,key?researchPage(lang,key):mainPage(lang),'utf8');
+    await writeFile(out,key==='cv'?cvPage(lang):key?researchPage(lang,key):mainPage(lang),'utf8');
     pages.push(path);
   }
 }

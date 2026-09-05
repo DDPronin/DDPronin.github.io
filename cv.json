@@ -1,0 +1,82 @@
+{
+  "en": {
+    "name": "Dmitry Pronin",
+    "title": "Academic CV",
+    "tagline": "Digital humanities researcher · Computational linguist · Python developer",
+    "affiliation": "HSE University · School of Philological Studies · Moscow, Russia",
+    "profile": "I develop interpretable methods for analysing literary style, authorship, and text corpora. I work as a programmer and visiting lecturer at HSE University and am a core developer of SOCIOLIT and PROZIMETRON. My publications include a peer-reviewed article in Digital Scholarship in the Humanities and a textbook on digital philology. At DH2026, I presented research and chaired a session.",
+    "interests": "Research interests: interpretable stylometry; authorship attribution; digital literary studies; corpus linguistics; explainable NLP; large language models.",
+    "sections": [
+      {"id":"conference","title":"Digital Humanities 2026","entries":[
+        {"title":"Presenter","body":"From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis, with Evgeny Kazartsev. Session S072, 30 July 2026, Room 107.","url":"https://arxiv.org/abs/2606.09543","linkLabel":"Open preprint"},
+        {"title":"Session chair","body":"Session S026 on linked open data, historical information retrieval, and rumour discovery. 29 July 2026, Room 103."}
+      ]},
+      {"id":"experience","title":"Academic and research experience","entries":[
+        {"title":"HSE University","date":"2025–present","subtitle":"Programmer and visiting lecturer · School of Philological Studies, Faculty of Humanities · Moscow","items":["Develop statistical and NLP methods for literary-text analysis, with an emphasis on interpretability, validation, and reproducibility.","Core developer of SOCIOLIT and PROZIMETRON: analytical modules, corpus pipelines, APIs, and interfaces for researchers.","Co-instructor of the BA course Literature and Digital Humanities in 2025/26."]},
+        {"title":"Bauman Moscow State Technical University","date":"2024–present","subtitle":"Team lead and Python developer · Research and Education Center · Moscow","items":["Lead research-software development, testing, and integration of Python components.","Develop statistical text-analysis methods and large-language-model applications."]}
+      ]},
+      {"id":"education","title":"Education","entries":[
+        {"title":"HSE University","date":"2025–present","body":"MA programme in Digital Methods in the Humanities · Moscow."},
+        {"title":"Bauman Moscow State Technical University","date":"2021–2025","body":"BSc in Control in Technical Systems, specialising in Intelligent Control and Data Processing Systems · Moscow."}
+      ]},
+      {"id":"projects","title":"Selected research projects","pageBreakBefore":true,"entries":[
+        {"title":"SOCIOLIT","body":"A Russian literary analytics platform. Contributed a corpus of 755 works by 180 authors spanning the eighteenth to twenty-first centuries.","url":"https://sociolit.ru/","linkLabel":"SOCIOLIT platform"},
+        {"title":"PROZIMETRON","body":"Comparative analysis of verse and prose: accentual annotation, rhythm modelling, probabilistic comparison, and multilingual workflows."},
+        {"title":"Interpretable Delta measures","body":"Rank-Turbulence and Jensen–Shannon Delta, token-level decompositions, and stability validation.","url":"https://github.com/DDPronin/Rank-Turbulence-Delta","linkLabel":"Code and notebooks"},
+        {"title":"GWAS-inspired stylometry","body":"Logistic-regression association testing with multiple-comparison correction to study lexical associations with authorship.","url":"https://github.com/DDPronin/GWAS-stylometry","linkLabel":"Code and notebooks"}
+      ]},
+      {"id":"publications","title":"Selected publications","entries":[
+        {"body":"Pronin, D., & Kazartsev, E. (2026). Rank-Turbulence Delta and interpretable approaches to stylometric Delta measures. Digital Scholarship in the Humanities, 41(3), 1616–1630.","url":"https://doi.org/10.1093/llc/fqag072","linkLabel":"DOI 10.1093/llc/fqag072"},
+        {"body":"Pronin, D., & Kazartsev, E. (2026). From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis. Short paper presented at DH2026; preprint arXiv:2606.09543.","url":"https://arxiv.org/abs/2606.09543","linkLabel":"Open preprint"},
+        {"body":"Kazartsev, E., Pronin, D., & Kirina, M. (forthcoming). Digital Literary Studies at the New Russian Computational Platform SOCIOLIT. In Proceedings of the 37th Conference of Open Innovations Association FRUCT. IEEE.","url":"https://publications.hse.ru/chapters/1025704970","linkLabel":"HSE publication record"},
+        {"body":"Kazartsev, E., & Pronin, D. (2024). Fundamentals of Digital Philology: Methods and Principles of Computer-Assisted Text Analysis. St Petersburg: Politekhnika. 178 pp. In Russian."}
+      ]},
+      {"id":"skills","title":"Technical profile","entries":[
+        {"body":"Python, SQL, Git; R for research; pandas, NumPy, SciPy, scikit-learn, statsmodels; Django and REST APIs. Stylometry, corpus processing, statistical modelling, clustering, data visualisation, and LLM applications."}
+      ]},
+      {"id":"activity","title":"Science communication and awards","entries":[
+        {"body":"Science communicator for System Block. Winner of BEST Hack 2023 in the Data Science track.","url":"https://sysblok.ru/author/dmitrii_pronin/","linkLabel":"Writing on System Block"}
+      ]}
+    ]
+  },
+  "ru": {
+    "name": "Дмитрий Пронин",
+    "title": "Академическое резюме",
+    "tagline": "Исследователь в digital humanities · Компьютерный лингвист · Python-разработчик",
+    "affiliation": "НИУ ВШЭ · Школа филологических наук · Москва, Россия",
+    "profile": "Разрабатываю интерпретируемые методы анализа литературного стиля, авторства и текстовых корпусов. Работаю программистом и приглашённым преподавателем НИУ ВШЭ, участвую в разработке СОЦИОЛИТа и ПРОЗИМЕТРОНа. Соавтор рецензируемой статьи в Digital Scholarship in the Humanities и учебника по цифровой филологии. На DH2026 выступил с докладом и председательствовал на секции.",
+    "interests": "Научные интересы: интерпретируемая стилометрия; атрибуция авторства; цифровое литературоведение; корпусная лингвистика; объяснимая обработка естественного языка; большие языковые модели.",
+    "sections": [
+      {"id":"conference","title":"Digital Humanities 2026","entries":[
+        {"title":"Докладчик","body":"From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis, совместно с Евгением Казарцевым. Секция S072, 30 июля 2026 года, аудитория 107.","url":"https://arxiv.org/abs/2606.09543","linkLabel":"Открытый препринт"},
+        {"title":"Председатель секции","body":"Секция S026 о связанных открытых данных, поиске исторической информации и выявлении слухов. 29 июля 2026 года, аудитория 103."}
+      ]},
+      {"id":"experience","title":"Академический и исследовательский опыт","entries":[
+        {"title":"Национальный исследовательский университет «Высшая школа экономики»","date":"2025–настоящее время","subtitle":"Программист и приглашённый преподаватель · Школа филологических наук факультета гуманитарных наук · Москва","items":["Разрабатываю статистические методы и инструменты обработки естественного языка для анализа литературных текстов с акцентом на интерпретируемость, проверку результатов и воспроизводимость.","Один из основных разработчиков СОЦИОЛИТа и ПРОЗИМЕТРОНа: аналитические модули, обработка корпусов, API и интерфейсы для исследователей.","Участвую в преподавании бакалаврского курса «Литература и цифровая гуманитаристика» в 2025/26 учебном году."]},
+        {"title":"МГТУ им. Н. Э. Баумана","date":"2024–настоящее время","subtitle":"Руководитель команды и Python-разработчик · Научно-образовательный центр · Москва","items":["Руковожу разработкой исследовательского ПО, тестированием и интеграцией компонентов на Python.","Разрабатываю статистические методы анализа текста и приложения на основе больших языковых моделей."]}
+      ]},
+      {"id":"education","title":"Образование","entries":[
+        {"title":"НИУ ВШЭ","date":"2025–настоящее время","body":"Магистратура «Цифровые методы в гуманитарных науках» · Москва."},
+        {"title":"МГТУ им. Н. Э. Баумана","date":"2021–2025","body":"Бакалавриат по направлению «Управление в технических системах», профиль «Интеллектуальные системы управления и обработки данных» · Москва."}
+      ]},
+      {"id":"projects","title":"Избранные исследовательские проекты","pageBreakBefore":true,"entries":[
+        {"title":"СОЦИОЛИТ","body":"Платформа анализа русской литературы. Участвовал в создании корпуса из 755 произведений 180 авторов XVIII–XXI веков.","url":"https://sociolit.ru/","linkLabel":"Платформа СОЦИОЛИТ"},
+        {"title":"ПРОЗИМЕТРОН","body":"Сравнительный анализ стиха и прозы: акцентная разметка, моделирование ритма, вероятностное сопоставление и работа с разными языками."},
+        {"title":"Интерпретируемые меры Delta","body":"Rank-Turbulence и Jensen–Shannon Delta, разложение результатов на вклады токенов и проверка устойчивости интерпретаций.","url":"https://github.com/DDPronin/Rank-Turbulence-Delta","linkLabel":"Код и ноутбуки"},
+        {"title":"Стилометрия по аналогии с GWAS","body":"Проверка связей между лексическими признаками и авторством с помощью логистической регрессии и поправки на множественные сравнения.","url":"https://github.com/DDPronin/GWAS-stylometry","linkLabel":"Код и ноутбуки"}
+      ]},
+      {"id":"publications","title":"Избранные публикации","entries":[
+        {"body":"Pronin, D., & Kazartsev, E. (2026). Rank-Turbulence Delta and interpretable approaches to stylometric Delta measures. Digital Scholarship in the Humanities, 41(3), 1616–1630.","url":"https://doi.org/10.1093/llc/fqag072","linkLabel":"DOI 10.1093/llc/fqag072"},
+        {"body":"Pronin, D., & Kazartsev, E. (2026). From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis. Краткий доклад на DH2026; препринт arXiv:2606.09543.","url":"https://arxiv.org/abs/2606.09543","linkLabel":"Открытый препринт"},
+        {"body":"Kazartsev, E., Pronin, D., & Kirina, M. (в печати). Digital Literary Studies at the New Russian Computational Platform SOCIOLIT. In Proceedings of the 37th Conference of Open Innovations Association FRUCT. IEEE.","url":"https://publications.hse.ru/chapters/1025704970","linkLabel":"Запись в библиографии ВШЭ"},
+        {"body":"Казарцев Е. В., Пронин Д. Д. (2024). Основы цифровой филологии: методы и принципы компьютерного анализа текста. Санкт-Петербург: Политехника. 178 с."}
+      ]},
+      {"id":"skills","title":"Методы и технологии","entries":[
+        {"body":"Python, SQL, Git; R для исследовательских задач; pandas, NumPy, SciPy, scikit-learn, statsmodels; Django и REST API. Стилометрия, обработка корпусов, статистическое моделирование, кластеризация, визуализация данных и приложения на основе больших языковых моделей."}
+      ]},
+      {"id":"activity","title":"Научная коммуникация и награды","entries":[
+        {"body":"Автор «Системного Блока». Победитель BEST Hack 2023 в направлении Data Science.","url":"https://sysblok.ru/author/dmitrii_pronin/","linkLabel":"Тексты в «Системном Блоке»"}
+      ]}
+    ]
+  }
+}
