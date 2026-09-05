@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ddpronin.github.io/sitemap.xml
