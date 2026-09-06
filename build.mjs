@@ -25,7 +25,7 @@ const text = {
     name: 'Dmitry Pronin', nav: ['Research', 'Publications', 'Writing', 'Contact'],
     skip: 'Skip to content', eyebrow: 'Digital Humanities · HSE University',
     title: 'Interpretable\ndigital stylometry',
-    intro: 'I study how writers’ styles differ and which words account for those differences. I develop methods that let us trace statistical results back to specific features of a text.',
+    intro: 'Stylometry can identify the most likely author of an anonymous text. But which features of the text contribute most to that attribution? My research explores how stylometric methods describe writing style and why they work.',
     see: 'Explore the research', about: 'About',
     bio: 'I am a programmer and visiting lecturer at HSE University’s School of Philological Studies, Faculty of Humanities. I develop research software and teach on the Literature and Digital Humanities course.',
     bio2: 'Together with Evgeny Kazartsev, I work on interpretable stylometric methods. I also contribute to SOCIOLIT and PROZIMETRON and write practical guides to computational text analysis.',
@@ -37,12 +37,12 @@ const text = {
     platformFeatures: ['Search for words and lemmas in literary corpora', 'Compare word distributions across groups of texts', 'Explore word frequencies and the emotional tone of a text'],
     platformLink: 'Explore SOCIOLIT',
     affiliation: 'HSE University', location: 'School of Philological Studies',
-    research: 'Research, explained', researchSub: 'The question, the method, and the words behind the result.',
-    rankQ: 'Which words make two texts different?',
-    rankDesc: 'Rank-Turbulence Delta compares word ranks and makes their contributions visible. A closer look at what stylometric distances actually measure.',
+    research: 'My research', researchSub: 'My research questions, methods, and findings in a nutshell.',
+    rankQ: 'Which words help a computer distinguish writing styles?',
+    rankDesc: 'A closer look at what stylometric distances actually measure.',
     gwasQ: 'Which tokens are associated with an author?',
     gwasDesc: 'A statistical workflow inspired by genome-wide association studies: test token associations, account for multiple comparisons, and inspect the evidence.',
-    read: 'Read the explanation', journal: 'Journal article · 2026', preprint: 'Preprint · DH2026',
+    read: 'Read the explanation', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Preprint · DH2026',
     publications: 'Selected publications', allPubs: 'Full list on Google Scholar', authors: 'Dmitry Pronin and Evgeny Kazartsev',
     paper: 'Publisher', open: 'Open preprint', code: 'Code & notebooks',
     writing: 'Writing & teaching', writingSub: 'Practical guides and field notes in Russian.',
@@ -63,7 +63,7 @@ const text = {
     name: 'Дмитрий Пронин', nav: ['Исследования', 'Публикации', 'Материалы', 'Контакты'],
     skip: 'Перейти к содержанию', eyebrow: 'Digital Humanities · НИУ ВШЭ',
     title: 'Интерпретируемая\nцифровая стилометрия',
-    intro: 'Изучаю, чем различается стиль писателей и какие слова создают эти различия. Разрабатываю методы анализа, которые позволяют проследить путь от статистического результата к конкретным особенностям текста.',
+    intro: 'Стилометрия позволяет определить наиболее вероятного автора анонимного текста. Но какие именно особенности этого текста сильнее всего влияют на решение об авторстве? В своих исследованиях изучаю, как стилометрические методы описывают стиль и почему они эффективны.',
     see: 'Посмотреть исследования', about: 'Обо мне',
     bio: 'Работаю программистом и приглашённым преподавателем Школы филологических наук факультета гуманитарных наук НИУ ВШЭ. Разрабатываю исследовательские инструменты и участвую в преподавании курса «Литература и цифровая гуманитаристика».',
     bio2: 'Вместе с Евгением Казарцевым занимаюсь интерпретируемыми методами стилометрии. Участвую в разработке СОЦИОЛИТа и ПРОЗИМЕТРОНа, пишу практические руководства по компьютерному анализу текста.',
@@ -75,12 +75,12 @@ const text = {
     platformFeatures: ['Поиск слов и лемм в литературных корпусах', 'Сравнение распределений слов в группах текстов', 'Изучение частот слов и эмоциональной тональности текста'],
     platformLink: 'Открыть СОЦИОЛИТ',
     affiliation: 'НИУ ВШЭ', location: 'Школа филологических наук',
-    research: 'Как устроены мои исследования', researchSub: 'Вопрос, метод и конкретные слова за результатом анализа.',
-    rankQ: 'Какие слова делают тексты разными?',
-    rankDesc: 'Rank-Turbulence Delta сравнивает ранги слов и показывает их вклад. Разбираемся, что именно измеряют стилометрические расстояния.',
+    research: 'Мои исследования', researchSub: 'Вопросы, методы и результаты моих исследований за минуту.',
+    rankQ: 'Какие слова позволяют компьютеру различить стиль?',
+    rankDesc: 'Разбираемся, что именно измеряют стилометрические расстояния.',
     gwasQ: 'Какие слова связаны с авторством?',
     gwasDesc: 'Подход по аналогии с полногеномными исследованиями ассоциаций: проверяем связи токенов с авторством, учитываем множественные сравнения и изучаем результат.',
-    read: 'Как работает метод', journal: 'Журнальная статья · 2026', preprint: 'Препринт · DH2026',
+    read: 'Как работает метод', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Препринт · DH2026',
     publications: 'Избранные публикации', allPubs: 'Полный список в Google Scholar', authors: 'Дмитрий Пронин и Евгений Казарцев',
     paper: 'У издателя', open: 'Открытый препринт', code: 'Код и ноутбуки',
     writing: 'Материалы и обучение', writingSub: 'Практические руководства и заметки о цифровой гуманитаристике.',
@@ -101,7 +101,7 @@ const text = {
 
 const research = {
   rank: {
-    slug: 'rank-turbulence-delta', title: 'Rank-Turbulence Delta', year: '2026',
+    slug: 'rank-turbulence-delta', title: 'Rank-Turbulence Delta', pageTitle: 'Rank-Turbulence Delta and Interpretable Approaches to Stylometric Delta Metrics', year: '2026',
     formal: 'Rank-Turbulence Delta and interpretable approaches to stylometric Delta measures',
     venue: 'Digital Scholarship in the Humanities, 41(3), 1616–1630.',
     article: urls.rankPaper, preprint: urls.rankPreprint, code: urls.rankCode,
@@ -109,28 +109,34 @@ const research = {
     imageSource: 'https://github.com/DDPronin/Rank-Turbulence-Delta/blob/main/figures/lexical_shift_RU_unigram.png',
     bib: '@article{pronin2026rank,\n  author = {Pronin, Dmitry and Kazartsev, Evgeny},\n  title = {Rank-Turbulence Delta and interpretable approaches to stylometric Delta measures},\n  journal = {Digital Scholarship in the Humanities},\n  year = {2026},\n  volume = {41},\n  number = {3},\n  pages = {1616--1630},\n  doi = {10.1093/llc/fqag072}\n}',
     en: {
-      subtitle: 'From a distance between texts to the contribution of individual words.',
-      question: 'A stylometric distance can tell us that two texts differ. But which words drive that difference? This work treats Delta measures as tools for exploration and asks how their results can be interpreted at the token level.',
+      subtitle: '',
+      overviewTitle: 'A five-second overview', briefTitle: 'In a nutshell',
+      question: 'We decompose mathematical measures of difference between texts to identify the words that contribute most to that difference.',
       steps: [
         ['Represent the texts', 'Build comparable frequency profiles using the same preprocessing and feature vocabulary.'],
-        ['Compare the profiles', 'Rank-Turbulence Delta works with word ranks. The study also examines classical, cosine, and Jensen–Shannon forms of Delta.'],
+        ['Compare the profiles', 'We start with established distances: Burrows’s Delta, Euclidean Delta, and Cosine Delta. We then test Jensen–Shannon divergence on probability distributions derived from uncentred standardized frequencies, and rank-turbulence divergence, developed by <a href="https://doi.org/10.1140/epjds/s13688-023-00386-7">P. S. Dodds and colleagues</a>, on the corresponding word rankings. These extensions yield Jensen–Shannon Delta and Rank-Turbulence Delta.'],
         ['Inspect the contributions', 'Decompose the comparison into token-level contributions, then examine how the interpretation changes with the feature set and perturbations of the data.'],
       ],
-      figure: 'Each panel shows token contributions for a different Delta measure in the Russian-language analysis. The selected tokens and their relative importance vary across methods. Read each panel against its own horizontal scale; the numerical magnitudes are not directly interchangeable.',
-      alt: 'Four horizontal bar charts compare token contributions for Burrows, Cosine, Jensen–Shannon, and Rank-Turbulence Delta in Russian-language texts.',
+      figure: 'The figure compares the styles of Fyodor Dostoevsky and Leo Tolstoy. For each author, we average the standardized frequency vectors of his texts, then decompose the distance between the two author profiles into word-level contributions.',
+      figureAfter: '<p><strong>Orange bars on the left: Dostoevsky. Blue bars on the right: Tolstoy.</strong> Bar length shows the size of a word’s contribution; its direction identifies the author whose profile gives that word greater weight. A bar pointing left does not mean a negative distance.</p><p>For example, Burrows’s Delta highlights «давеча» (earlier today) and «давешний» (from earlier today) on Dostoevsky’s side, and «шопотом» (in a whisper, as spelled in the corpus) and «нынче» (today / nowadays) on Tolstoy’s side. Each panel applies a different measure to the same author pair, so the most prominent words change. Read the panels against their own scales.</p>',
+      figureCaption: 'Figure 6 from the paper. Word contributions to the difference between Dostoevsky (orange, left) and Tolstoy (blue, right); Rank-Turbulence Delta uses α = 1.',
+      alt: 'Four word-contribution charts comparing Dostoevsky, orange bars on the left, and Tolstoy, blue bars on the right: Burrows, Cosine, Jensen–Shannon, and Rank-Turbulence Delta.',
       limits: 'The study evaluates several languages and examines the stability of the explanations. A distance and its decomposition depend on the corpus, preprocessing, and feature selection. A highly ranked contribution is a feature of this comparison; interpreting it as a literary trait still requires reading the texts.',
       start: 'The repository contains notebooks, dependencies, and reproduction instructions. Begin with a supplied analysis, inspect the frequency profiles and contribution plots, then adapt the pipeline to a corpus whose composition you understand.',
     },
     ru: {
-      subtitle: 'От расстояния между текстами — к вкладу отдельных слов.',
-      question: 'Стилометрическое расстояние показывает, что два текста различаются. Но какие слова создают это различие? В этой работе меры Delta рассматриваются как инструменты исследования: их результат можно разложить и интерпретировать на уровне отдельных токенов.',
+      subtitle: '',
+      overviewTitle: 'Обзор за 5 секунд', briefTitle: 'Содержание кратко',
+      question: 'Работа описывает, как разложить математическую меру различия между текстами на вклады отдельных слов и выделить те, которые сильнее всего влияют на это различие.',
       steps: [
         ['Представляем тексты', 'Строим сопоставимые частотные профили: одинаковая предобработка и общий набор признаков.'],
-        ['Сравниваем профили', 'Rank-Turbulence Delta работает с рангами слов. В исследовании также рассматриваются классическая, косинусная и Jensen–Shannon версии Delta.'],
+        ['Сравниваем профили', 'Начинаем с классических расстояний: Дельты Берроуза, евклидовой и косинусной Дельты. Затем тестируем дивергенцию Jensen–Shannon на вероятностных распределениях, полученных из нецентрированных стандартизированных частот, и ранговую турбулентность, разработанную <a href="https://doi.org/10.1140/epjds/s13688-023-00386-7">P. S. Dodds и коллегами</a>, — на соответствующих рангах слов. Так получаем Jensen–Shannon Delta и Rank-Turbulence Delta.'],
         ['Изучаем вклад слов', 'Раскладываем сравнение на вклады токенов и проверяем, как меняется интерпретация при выборе признаков и изменениях данных.'],
       ],
-      figure: 'Каждая панель показывает вклады токенов для одной из мер Delta в анализе русскоязычных текстов. Набор выделенных слов и их относительная значимость различаются. У каждой панели своя горизонтальная шкала: численные величины между панелями напрямую несопоставимы.',
-      alt: 'Четыре горизонтальные столбчатые диаграммы: вклады русских токенов для Burrows Delta, Cosine Delta, Jensen–Shannon Delta и Rank-Turbulence Delta.',
+      figure: 'На графике сравниваются стили Фёдора Достоевского и Льва Толстого. Для каждого автора усредняем стандартизированные частотные векторы его произведений, а затем раскладываем расстояние между двумя авторскими профилями на вклады слов.',
+      figureAfter: '<p><strong>Оранжевые столбцы слева — Достоевский. Синие справа — Толстой.</strong> Длина столбца показывает величину вклада слова, а направление — автора, в чьём профиле это слово имеет больший вес. Столбец слева не означает отрицательного расстояния.</p><p>Например, Дельта Берроуза выделяет на стороне Достоевского «давеча» и «давешний», на стороне Толстого — «шопотом» (написание в корпусе) и «нынче». Каждая панель показывает одну и ту же пару авторов через другую меру, поэтому самые заметные слова меняются. У панелей свои шкалы: численные величины между ними напрямую несопоставимы.</p>',
+      figureCaption: 'Рисунок 6 из статьи. Вклады слов в различие между Достоевским (оранжевый, слева) и Толстым (синий, справа); для Rank-Turbulence Delta α = 1.',
+      alt: 'Четыре диаграммы вкладов слов: Достоевский — оранжевые столбцы слева, Толстой — синие справа. Меры: Дельта Берроуза, косинусная, Jensen–Shannon и Rank-Turbulence Delta.',
       limits: 'В работе рассматриваются несколько языков и устойчивость интерпретаций. Расстояние и его разложение зависят от корпуса, предобработки и выбора признаков. Большой вклад слова — свойство конкретного сравнения; литературоведческий вывод требует возвращения к самим текстам.',
       start: 'В репозитории есть ноутбуки, зависимости и инструкции по воспроизведению. Начните с готового анализа, изучите частотные профили и графики вкладов, затем адаптируйте обработку к корпусу с понятным вам составом.',
     },
@@ -186,7 +192,7 @@ function document(lang, key, body, meta) {
   const currentUrl = base ? `${base}/${path}` : '';
   const langs = ['en', 'ru'].map(l => `<a href="${local(route(l,key))}" lang="${l}" hreflang="${l}" ${l === lang ? 'aria-current="page"' : ''}>${l.toUpperCase()}</a>`).join('');
   const schema = { '@context': 'https://schema.org', '@type': isResearch ? 'WebPage' : 'ProfilePage', name: meta.title, inLanguage: lang, ...(currentUrl ? {url: currentUrl} : {}), mainEntity: { '@type': isResearch ? 'ScholarlyArticle' : 'Person', name: isResearch ? research[key].formal : 'Dmitry Pronin', ...(isResearch ? {author: [{ '@type': 'Person', name:'Dmitry Pronin' }, {'@type':'Person',name:'Evgeny Kazartsev'}], sameAs: research[key].article || research[key].preprint} : {alternateName:'Дмитрий Пронин', email:config.email, image:base+'/assets/dmitry-pronin.jpg?v=2', sameAs:[urls.hse,urls.orcid,urls.scholar,urls.github], affiliation:{'@type':'Organization',name:'HSE University'}}) } };
-  const head = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(meta.title)}</title><meta name="description" content="${esc(meta.description)}"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:title" content="${esc(meta.title)}"><meta property="og:description" content="${esc(meta.description)}"><meta property="og:locale" content="${lang==='ru'?'ru_RU':'en_US'}">${currentUrl ? `<link rel="canonical" href="${currentUrl}"><meta property="og:url" content="${currentUrl}">` + ['en','ru'].map(l=>`<link rel="alternate" hreflang="${l}" href="${base}/${route(l,key)}">`).join('') + `<link rel="alternate" hreflang="x-default" href="${base}/${route('en',key)}">` : ''}<link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${rel}assets/style.css?v=2"><script defer src="${rel}assets/site.js"></script><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script></head>`;
+  const head = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(meta.title)}</title><meta name="description" content="${esc(meta.description)}"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website"><meta property="og:title" content="${esc(meta.title)}"><meta property="og:description" content="${esc(meta.description)}"><meta property="og:locale" content="${lang==='ru'?'ru_RU':'en_US'}">${currentUrl ? `<link rel="canonical" href="${currentUrl}"><meta property="og:url" content="${currentUrl}">` + ['en','ru'].map(l=>`<link rel="alternate" hreflang="${l}" href="${base}/${route(l,key)}">`).join('') + `<link rel="alternate" hreflang="x-default" href="${base}/${route('en',key)}">` : ''}<link rel="icon" href="${rel}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${rel}assets/style.css?v=3"><script defer src="${rel}assets/site.js"></script><script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script></head>`;
   return head + `<body><a class="skip" href="#main">${t.skip}</a><header class="header wrap"><a class="wordmark" href="${local(home(lang))}">${t.name}<span>Digital Humanities</span></a><nav aria-label="${lang==='ru'?'Основная навигация':'Main navigation'}">${t.nav.slice(0,3).map((label,i)=>link(`${local(home(lang))}#${['research','publications','writing'][i]}`,label)).join('')}${link(local(route(lang,'cv')),t.cv)}${link(`${local(home(lang))}#contact`,t.nav[3])}</nav><div class="languages" aria-label="${lang==='ru'?'Язык':'Language'}">${langs}</div></header><main id="main">${body({t,rel,local})}</main><footer class="wrap footer"><span>© 2026 ${t.name}</span><span>${t.updated}</span><div>${link(urls.orcid,'ORCID')}${link(urls.github,'GitHub')}</div></footer></body></html>`;
 }
 
@@ -214,13 +220,58 @@ function cvPage(lang) {
   <div class="article-body wrap"><aside class="article-toc"><span class="section-label">${lang==='ru'?'В резюме':'CV contents'}</span><nav aria-label="${lang==='ru'?'Разделы резюме':'CV sections'}">${c.sections.map(s=>link('#'+s.id,s.title)).join('')}</nav></aside><div class="article-content cv-content"><section id="profile"><h2>${lang==='ru'?'Профиль':'Profile'}</h2><p class="lead">${c.profile}</p><p class="cv-interests">${c.interests}</p></section>${c.sections.map(s=>`<section id="${s.id}"><h2>${s.title}</h2>${s.entries.map(e=>`<article class="cv-entry">${e.title?`<div class="cv-entry-heading"><h3>${e.title}</h3>${e.date?`<span>${e.date}</span>`:''}</div>`:''}${e.subtitle?`<p class="cv-subtitle">${e.subtitle}</p>`:''}${e.body?`<p>${e.body}</p>`:''}${e.items?`<ul>${e.items.map(i=>`<li>${i}</li>`).join('')}</ul>`:''}${e.url?link(e.url,e.linkLabel+' ↗','read-link'):''}</article>`).join('')}</section>`).join('')}</div></div>`, {title:`${c.name} — ${c.title}`,description:c.profile});
 }
 
+function rankBrief(lang,c) {
+  const ru=lang==='ru';
+  const math=(label,body)=>`<div class="equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="${esc(label)}">${body}</math></div>`;
+  const z=(author)=>`<msubsup><mi>z</mi><mi>i</mi><mrow><mo>(</mo><mn>${author}</mn><mo>)</mo></mrow></msubsup>`;
+  const p=(author)=>`<msubsup><mi>p</mi><mi>i</mi><mrow><mo>(</mo><mn>${author}</mn><mo>)</mo></mrow></msubsup>`;
+  const sigma='<msub><mi>σ</mi><mi>i</mi></msub>';
+  const sum='<munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover>';
+  const delta='<mrow><mi>Δ</mi><mo>(</mo><msub><mi>T</mi><mn>1</mn></msub><mo>,</mo><msub><mi>T</mi><mn>2</mn></msub><mo>)</mo></mrow>';
+  const contribution='<msub><mi>δ</mi><mi>i</mi></msub>';
+  const distance=math(ru?'Дельта равна сумме абсолютных разностей стандартизированных частот слов в двух текстах':'Delta is the sum of absolute differences between standardized word frequencies in two texts',`${delta}<mo>=</mo>${sum}<mrow><mo>|</mo>${z(1)}<mo>−</mo>${z(2)}<mo>|</mo></mrow>`);
+  const standard=math(ru?'Стандартизированная частота: из частоты слова вычитаем среднюю по корпусу и делим на стандартное отклонение':'Standardized frequency: subtract the corpus mean from the word frequency and divide by its standard deviation',`${z(1)}<mo>=</mo><mfrac><mrow>${p(1)}<mo>−</mo><msub><mi>μ</mi><mi>i</mi></msub></mrow>${sigma}</mfrac>`);
+  const parts=math(ru?'Вклад слова равен модулю разности его частот, делённой на стандартное отклонение':'A word’s contribution is its absolute frequency difference divided by its standard deviation',`${contribution}<mo>=</mo><mrow><mo>|</mo>${z(1)}<mo>−</mo>${z(2)}<mo>|</mo></mrow><mo>=</mo><mfrac><mrow><mo>|</mo>${p(1)}<mo>−</mo>${p(2)}<mo>|</mo></mrow>${sigma}</mfrac>`);
+  const total=math(ru?'Дельта равна сумме вкладов всех выбранных слов':'Delta equals the sum of all selected word contributions',`${delta}<mo>=</mo>${sum}${contribution}`);
+  return `<section id="brief"><h2>${c.briefTitle}</h2>${ru?`
+    <p>Стилометрические расстояния, например Дельта Берроуза, помогают определять авторство и группировать тексты по авторам, сравнивая их векторные представления. Но какие именно слова в этих векторах сильнее всего влияют на различие между конкретными текстами или их группами?</p>
+    <p>Дельта Берроуза описывает степень отличия двух текстов как расстояние между их стандартизированными частотными векторами:</p>
+    ${distance}
+    <p class="formula-note">Здесь и далее используем Дельту без деления на число выбранных слов <i>n</i>. При фиксированном наборе слов это меняет только масштаб, но не порядок расстояний.</p>
+    <p>Каждая координата <i>z</i> — частота одного слова, приведённая к общему масштабу. Из относительной частоты <i>p</i> вычитаем среднюю по корпусу <i>μ</i> и делим на стандартное отклонение <i>σ</i> этого слова:</p>
+    ${standard}
+    <p>До финального суммирования расстояние рассчитывается отдельно для каждого слова. Это и есть манхэттенское расстояние между стандартизированными TF-векторами текстов. При вычитании среднее сокращается, и вклад слова <i>i</i> можно записать так:</p>
+    ${parts}${total}
+    <p>Значит, можно оценить вклад каждого слова, сравнить его с остальными и выделить наиболее сильные лексические сигналы, по которым метод различает стили.</p>
+    <details class="worked-example"><summary>Условный пример на трёх словах</summary><p>Возьмём два условных текста. Числа ниже придуманы для объяснения формулы и не являются результатами сравнения писателей.</p>
+    <div class="table-scroll"><table><caption>Стандартизированные частоты и вклады</caption><thead><tr><th scope="col">Слово</th><th scope="col">z в T₁</th><th scope="col">z в T₂</th><th scope="col">Вклад δ</th></tr></thead><tbody><tr><th scope="row">давеча</th><td>2</td><td>0</td><td>2</td></tr><tr><th scope="row">шёпотом</th><td>0</td><td>1</td><td>1</td></tr><tr><th scope="row">и</th><td>0,5</td><td>0,5</td><td>0</td></tr></tbody></table></div>
+    <p>Дельта равна 2 + 1 + 0 = <strong>3</strong>. В этом примере «давеча» даёт две трети расстояния, «шёпотом» — одну треть, а «и» не вносит вклада, поскольку его частоты совпадают.</p></details>
+    <p class="formula-note">Формулы и разложение: <a href="https://arxiv.org/pdf/2604.19499#page=3">раздел 2</a> и <a href="https://arxiv.org/pdf/2604.19499#page=6">раздел 4 статьи</a>.</p>
+  `:`
+    <p>Stylometric distances such as Burrows’s Delta help attribute texts and group them by author by comparing their vector representations. But which words in those vectors contribute most to the difference between individual texts or groups of texts?</p>
+    <p>Burrows’s Delta expresses the difference between two texts as a distance between their standardized frequency vectors:</p>
+    ${distance}
+    <p class="formula-note">Throughout this explanation, we omit division by the number of selected words, <i>n</i>. For a fixed word set, this changes the scale but not the ordering of distances.</p>
+    <p>Each coordinate <i>z</i> is a word frequency expressed on a common scale: subtract the corpus mean <i>μ</i> from the relative frequency <i>p</i>, then divide by that word’s standard deviation <i>σ</i>:</p>
+    ${standard}
+    <p>Before the final sum, the distance is calculated separately for each word. This is the Manhattan distance between standardized term-frequency vectors. The mean cancels in the subtraction, so the contribution of word <i>i</i> can be written as:</p>
+    ${parts}${total}
+    <p>We can therefore quantify each word’s contribution, compare it with the others, and identify the strongest lexical signals by which the method distinguishes writing styles.</p>
+    <details class="worked-example"><summary>A worked example with three words</summary><p>Consider two hypothetical texts. These numbers illustrate the formula; they are not results from a comparison of writers.</p>
+    <div class="table-scroll"><table><caption>Standardized frequencies and contributions</caption><thead><tr><th scope="col">Word</th><th scope="col">z in T₁</th><th scope="col">z in T₂</th><th scope="col">Contribution δ</th></tr></thead><tbody><tr><th scope="row">давеча</th><td>2</td><td>0</td><td>2</td></tr><tr><th scope="row">шёпотом</th><td>0</td><td>1</td><td>1</td></tr><tr><th scope="row">и</th><td>0.5</td><td>0.5</td><td>0</td></tr></tbody></table></div>
+    <p>Delta is 2 + 1 + 0 = <strong>3</strong>. Here, «давеча» (earlier today) accounts for two thirds of the distance, «шёпотом» (in a whisper) for one third, and «и» (and) contributes nothing because its frequencies are identical.</p></details>
+    <p class="formula-note">For the formulas and decomposition, see <a href="https://arxiv.org/pdf/2604.19499#page=3">Section 2</a> and <a href="https://arxiv.org/pdf/2604.19499#page=6">Section 4 of the paper</a>.</p>
+  `}</section>`;
+}
+
 function researchPage(lang,key) {
   const r=research[key], c=r[lang], t=text[lang];
   const other=key==='rank'?'gwas':'rank';
+  const sections=key==='rank' ? [['question',c.overviewTitle],['brief',c.briefTitle],['method',t.method],['figure',t.figure],['start',t.start]] : ['question','method','figure','limits','start'].map(id=>[id,t[id]]);
   return document(lang,key,({rel,local})=>`
-  <header class="article-header wrap">${link(local(home(lang))+'#research',`← ${t.back}`,'back-link')}<p class="eyebrow">${key==='rank'?t.journal:t.preprint}</p><h1>${r.title}</h1><p class="article-subtitle">${c.subtitle}</p><p class="authors">${t.authors}</p>${resourceLinks(r,t)}</header>
-  <div class="article-body wrap"><aside class="article-toc"><span class="section-label">${lang==='ru'?'В этом разборе':'In this explanation'}</span><nav aria-label="${lang==='ru'?'Разделы исследования':'Research sections'}">${['question','method','figure','limits','start'].map(id=>link('#'+id,t[id])).join('')}</nav></aside><div class="article-content"><section id="question"><h2>${t.question}</h2><p class="lead">${c.question}</p></section><section id="method"><h2>${t.method}</h2><ol class="method-steps">${c.steps.map(([title,body])=>`<li><h3>${title}</h3><p>${body}</p></li>`).join('')}</ol></section><section id="figure"><h2>${t.figure}</h2><p>${c.figure}</p><figure><a href="${rel}assets/${r.image}" aria-label="${t.fullSize}"><img src="${rel}assets/${r.image}" alt="${esc(c.alt)}" width="${r.imageWidth}" height="${r.imageHeight}" loading="lazy"></a><figcaption>${link(`${rel}assets/${r.image}`,t.fullSize)} · ${link(r.imageSource,t.source)}</figcaption></figure></section><section id="limits"><h2>${t.limits}</h2><p>${c.limits}</p></section><section id="start"><h2>${t.start}</h2><p>${c.start}</p>${link(r.code,`${t.code} ↗`,'primary-link')}</section><section class="citation" id="citation"><h2>${t.bib}</h2><p>${esc(r.formal)}. ${r.venue}</p><details><summary>BibTeX</summary><button class="copy-button" type="button" data-copy="citation-bib" data-copied="${t.copied}" data-failed="${lang==='ru'?'Выделите и скопируйте текст ниже':'Select and copy the text below'}">${t.copy}</button><pre id="citation-bib"><code>${esc(r.bib)}</code></pre><span class="copy-status" aria-live="polite"></span></details>${resourceLinks(r,t)}</section><div class="related"><p class="meta">${t.next}</p><h3>${link(local(route(lang,other)),research[other].title+' →')}</h3></div></div></div>`,
-  {title:`${r.title} — ${t.name}`,description:c.subtitle});
+  <header class="article-header wrap">${link(local(home(lang))+'#research',`← ${t.back}`,'back-link')}<p class="eyebrow">${key==='rank'?t.journal:t.preprint}</p><h1>${r.pageTitle || r.title}</h1>${c.subtitle?`<p class="article-subtitle">${c.subtitle}</p>`:''}<p class="authors">${t.authors}</p>${resourceLinks(r,t)}</header>
+  <div class="article-body wrap"><aside class="article-toc"><span class="section-label">${lang==='ru'?'В этом разборе':'In this explanation'}</span><nav aria-label="${lang==='ru'?'Разделы исследования':'Research sections'}">${sections.map(([id,label])=>link('#'+id,label)).join('')}</nav></aside><div class="article-content"><section id="question"><h2>${c.overviewTitle || t.question}</h2><p class="lead">${c.question}</p></section>${key==='rank'?rankBrief(lang,c):''}<section id="method"><h2>${t.method}</h2><ol class="method-steps">${c.steps.map(([title,body])=>`<li><h3>${title}</h3><p>${body}</p></li>`).join('')}</ol></section><section id="figure"><h2>${t.figure}</h2><p>${c.figure}</p><figure><a href="${rel}assets/${r.image}" aria-label="${t.fullSize}"><img src="${rel}assets/${r.image}" alt="${esc(c.alt)}" width="${r.imageWidth}" height="${r.imageHeight}" loading="lazy"></a><figcaption>${c.figureCaption?esc(c.figureCaption)+' <br>':''}${link(`${rel}assets/${r.image}`,t.fullSize)} · ${link(r.imageSource,t.source)}</figcaption></figure>${c.figureAfter || ''}</section>${key==='rank'?'':`<section id="limits"><h2>${t.limits}</h2><p>${c.limits}</p></section>`}<section id="start"><h2>${t.start}</h2><p>${c.start}</p>${link(r.code,`${t.code} ↗`,'primary-link')}</section><section class="citation" id="citation"><h2>${t.bib}</h2><p>${esc(r.formal)}. ${r.venue}</p><details><summary>BibTeX</summary><button class="copy-button" type="button" data-copy="citation-bib" data-copied="${t.copied}" data-failed="${lang==='ru'?'Выделите и скопируйте текст ниже':'Select and copy the text below'}">${t.copy}</button><pre id="citation-bib"><code>${esc(r.bib)}</code></pre><span class="copy-status" aria-live="polite"></span></details>${resourceLinks(r,t)}</section><div class="related"><p class="meta">${t.next}</p><h3>${link(local(route(lang,other)),research[other].title+' →')}</h3></div></div></div>`,
+  {title:`${r.pageTitle || r.title} — ${t.name}`,description:c.subtitle || c.question});
 }
 
 for (const lang of ['en','ru']) {
