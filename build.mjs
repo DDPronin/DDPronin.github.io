@@ -41,7 +41,7 @@ const text = {
     rankQ: 'Which words help a computer distinguish writing styles?',
     rankDesc: 'Burrows’s Delta and its variants can group texts by authorship with good accuracy. Yet not all words contribute equally to the result. Let’s decompose Delta into its components to identify the strongest authorial signals.',
     gwasQ: 'A genome-wide scan for the DNA of writing style',
-    gwasDesc: '<strong>Genome-wide association studies</strong> (GWAS) have proved effective in genomics, revealing statistical links between genetic markers and traits such as height or disease. Let’s apply the same logic to authors’ word-frequency profiles.',
+    gwasDesc: 'Genome-wide association studies (GWAS) have proved effective in genomics, revealing statistical links between genetic markers and traits such as height or disease. Let’s apply the same logic to authors’ word-frequency profiles.',
     read: 'Read the explanation', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'DH2026 presentation · 2026',
     publications: 'Selected publications', allPubs: 'Full list on Google Scholar', authors: 'Dmitry Pronin and Evgeny Kazartsev',
     paper: 'Publisher', open: 'Open preprint', code: 'Code & notebooks',
@@ -79,7 +79,7 @@ const text = {
     rankQ: 'Какие слова позволяют компьютеру различить стиль?',
     rankDesc: 'Дельта Берроуза и её разновидности позволяют с хорошей точностью группировать тексты согласно их авторству. Однако не все слова в равной степени влияют на результат. Попробуем выделить наиболее сильные авторские сигналы, разложив Дельту на компоненты.',
     gwasQ: 'Полногеномный анализ для ДНК авторского стиля',
-    gwasDesc: '<strong>Полногеномный поиск ассоциаций</strong> (GWAS — Genome-Wide Association Studies) доказал свою эффективность в геномике, дав возможность устанавливать статистические связи между генетическими маркерами и признаками — например, ростом или заболеваниями. Попробуем применить такую же логику к частотным авторским профилям.',
+    gwasDesc: 'Полногеномный поиск ассоциаций (GWAS — Genome-Wide Association Studies) доказал свою эффективность в геномике, дав возможность устанавливать статистические связи между генетическими маркерами и признаками — например, ростом или заболеваниями. Попробуем применить такую же логику к частотным авторским профилям.',
     read: 'Как работает метод', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Доклад на DH2026 · 2026',
     publications: 'Избранные публикации', allPubs: 'Полный список в Google Scholar', authors: 'Дмитрий Пронин и Евгений Казарцев',
     paper: 'У издателя', open: 'Открытый препринт', code: 'Код и ноутбуки',
@@ -273,19 +273,19 @@ function gwasBrief(lang,c) {
     <p>Можно ли искать авторские особенности так же, как генетики ищут варианты ДНК, связанные с ростом или заболеванием? В GWAS каждый генетический маркер проверяют отдельно. Мы переносим эту логику на язык: маркером становится частота слова, а изучаемым признаком — авторство текста.</p>
     <p>Берём тексты с известными авторами, делим их на сопоставимые фрагменты и считаем частоты слов. Затем выбираем писателя и для каждого слова задаём один вопрос: меняется ли вероятность того, что фрагмент принадлежит этому автору, вместе с частотой слова?</p>
     <p>Так получаем карту лексических ассоциаций. У каждого слова есть направление и сила связи — коэффициент <i>β</i> — и <i>p</i>-значение для проверки гипотезы, что связи нет. Поправка на тысячи одновременно проверяемых слов помогает отсеять случайные находки. В результате можно увидеть и слова, характерные для автора, и те, которые сравнительно редко встречаются в его текстах.</p>
-    <details class="worked-example" open><summary>Пример: что слово «чувствовать» говорит о Толстом?</summary>
-    <p>Помечаем фрагменты Толстого числом 1, фрагменты остальных писателей — 0. Для каждого фрагмента берём стандартизированную частоту леммы «чувствовать» и строим модель только с этим словом.</p>
-    <p>Положительный коэффициент означает: чем выше частота, тем выше оценённая моделью вероятность метки «Толстой». Отрицательный показал бы обратную связь. Если проверка проходит скорректированный порог значимости, слово попадает в список авторских сигналов.</p>
-    <p>В результатах статьи «чувствовать» действительно находится среди положительных сигналов Толстого. Это позволяет перейти к литературоведческому вопросу: в каких сценах, сочетаниях и повествовательных функциях возникает это слово?</p></details>
+    <details class="worked-example" open><summary>Частотный авторский профиль = ДНК, Авторство = фенотип</summary>
+    <p>Представим частотный профиль текста как его «ДНК»: каждая позиция в этом профиле хранит стандартизированную частоту отдельного слова. Авторство играет роль фенотипа — признака, связь с которым мы хотим проверить. Для анализа Толстого фрагменты его произведений получают метку 1, фрагменты остальных авторов — 0.</p>
+    <p>Теперь возьмём одну позицию этой «ДНК» — частоту слова «чувствовать». По аналогии с проверкой генетического маркера строим отдельную модель и спрашиваем: связаны ли значения этой частоты с фенотипом «авторство Толстого»? Затем повторяем такую проверку для каждого слова профиля.</p>
+    <p>В статье у «чувствовать» обнаружена положительная статистически значимая связь с авторством Толстого: более высокой частоте соответствует более высокая оценённая моделью вероятность авторской метки. После поправки на множественные проверки собираем карту таких связей — набор лексических маркеров, по которым можно исследовать особенности авторского стиля.</p></details>
     <p class="formula-note">Подход и результаты описаны в <a href="https://arxiv.org/pdf/2606.09543#page=2">разделах 2–3 статьи</a>. Работа представлена на DH2026 и доступна как препринт.</p>
   `:`
     <p>Can we look for features of writing style in the same way that geneticists look for DNA variants associated with height or disease? GWAS tests each genetic marker separately. We transfer that logic to language: word frequency becomes the marker, and authorship becomes the trait of interest.</p>
     <p>We take texts with known authors, split them into comparable chunks, and count word frequencies. We then choose an author and ask the same question for every word: does the probability that a chunk belongs to this author vary with that word’s frequency?</p>
     <p>The result is a map of lexical associations. Each word receives a coefficient, <i>β</i>, indicating the direction and strength of the association, and a <i>p</i>-value for testing the hypothesis of no association. Correcting for the thousands of words tested helps filter out chance findings. The map reveals both words characteristic of an author and words used comparatively rarely in that author’s texts.</p>
-    <details class="worked-example" open><summary>An example: what does “to feel” tell us about Tolstoy?</summary>
-    <p>Label Tolstoy’s chunks 1 and the other writers’ chunks 0. For each chunk, take the standardized frequency of «чувствовать» (to feel) and fit a model using that word alone.</p>
-    <p>A positive coefficient means that a higher frequency corresponds to a higher model-estimated probability of the Tolstoy label. A negative coefficient would indicate the reverse association. If the test passes the corrected significance threshold, the word becomes a candidate authorial signal.</p>
-    <p>In the paper’s results, «чувствовать» is indeed a positive signal for Tolstoy. This leads to a literary question: in which scenes, combinations, and narrative functions does the word appear?</p></details>
+    <details class="worked-example" open><summary>Authorial frequency profile = DNA, Authorship = phenotype</summary>
+    <p>Imagine a text’s frequency profile as its “DNA”: each position holds the standardized frequency of a particular word. Authorship plays the role of the phenotype — the trait whose associations we want to test. For the Tolstoy analysis, chunks of his works receive label 1 and chunks by the other authors receive label 0.</p>
+    <p>Now take one position in this “DNA”: the frequency of «чувствовать» (to feel). Just as we would test a genetic marker, we fit a separate model and ask whether this frequency is associated with the phenotype “Tolstoy authorship”. We repeat the test for every word in the profile.</p>
+    <p>The paper finds a positive, statistically significant association between «чувствовать» and Tolstoy’s authorship: a higher frequency corresponds to a higher model-estimated probability of the author label. After correcting for multiple testing, we assemble a map of these associations — a set of lexical markers through which to explore writing style.</p></details>
     <p class="formula-note">See <a href="https://arxiv.org/pdf/2606.09543#page=2">Sections 2–3 of the paper</a> for the method and results. The work was presented at DH2026 and is available as a preprint.</p>
   `}</section>`;
 }
