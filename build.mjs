@@ -39,10 +39,10 @@ const text = {
     affiliation: 'HSE University', location: 'School of Philological Studies',
     research: 'My research', researchSub: 'My research questions, methods, and findings in a nutshell.',
     rankQ: 'Which words help a computer distinguish writing styles?',
-    rankDesc: 'A closer look at what stylometric distances actually measure.',
-    gwasQ: 'Which tokens are associated with an author?',
-    gwasDesc: 'A statistical workflow inspired by genome-wide association studies: test token associations, account for multiple comparisons, and inspect the evidence.',
-    read: 'Read the explanation', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Preprint · DH2026',
+    rankDesc: 'Burrows’s Delta and its variants can group texts by authorship with good accuracy. Yet not all words contribute equally to the result. Let’s decompose Delta into its components to identify the strongest authorial signals.',
+    gwasQ: 'A genome-wide scan for the DNA of writing style',
+    gwasDesc: '<strong>Genome-wide association studies</strong> (GWAS) have proved effective in genomics, revealing statistical links between genetic markers and traits such as height or disease. Let’s apply the same logic to authors’ word-frequency profiles.',
+    read: 'Read the explanation', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'DH2026 presentation · 2026',
     publications: 'Selected publications', allPubs: 'Full list on Google Scholar', authors: 'Dmitry Pronin and Evgeny Kazartsev',
     paper: 'Publisher', open: 'Open preprint', code: 'Code & notebooks',
     writing: 'Writing & teaching', writingSub: 'Practical guides and field notes in Russian.',
@@ -77,10 +77,10 @@ const text = {
     affiliation: 'НИУ ВШЭ', location: 'Школа филологических наук',
     research: 'Мои исследования', researchSub: 'Вопросы, методы и результаты моих исследований за минуту.',
     rankQ: 'Какие слова позволяют компьютеру различить стиль?',
-    rankDesc: 'Разбираемся, что именно измеряют стилометрические расстояния.',
-    gwasQ: 'Какие слова связаны с авторством?',
-    gwasDesc: 'Подход по аналогии с полногеномными исследованиями ассоциаций: проверяем связи токенов с авторством, учитываем множественные сравнения и изучаем результат.',
-    read: 'Как работает метод', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Препринт · DH2026',
+    rankDesc: 'Дельта Берроуза и её разновидности позволяют с хорошей точностью группировать тексты согласно их авторству. Однако не все слова в равной степени влияют на результат. Попробуем выделить наиболее сильные авторские сигналы, разложив Дельту на компоненты.',
+    gwasQ: 'Полногеномный анализ для ДНК авторского стиля',
+    gwasDesc: '<strong>Полногеномный поиск ассоциаций</strong> (GWAS — Genome-Wide Association Studies) доказал свою эффективность в геномике, дав возможность устанавливать статистические связи между генетическими маркерами и признаками — например, ростом или заболеваниями. Попробуем применить такую же логику к частотным авторским профилям.',
+    read: 'Как работает метод', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Доклад на DH2026 · 2026',
     publications: 'Избранные публикации', allPubs: 'Полный список в Google Scholar', authors: 'Дмитрий Пронин и Евгений Казарцев',
     paper: 'У издателя', open: 'Открытый препринт', code: 'Код и ноутбуки',
     writing: 'Материалы и обучение', writingSub: 'Практические руководства и заметки о цифровой гуманитаристике.',
@@ -126,7 +126,7 @@ const research = {
     },
     ru: {
       subtitle: '',
-      overviewTitle: 'Обзор за 5 секунд', briefTitle: 'Содержание кратко',
+      overviewTitle: 'Обзор за 5 секунд', briefTitle: 'Краткое содержание',
       question: 'Работа описывает, как разложить математическую меру различия между текстами на вклады отдельных слов и выделить те, которые сильнее всего влияют на это различие.',
       steps: [
         ['Представляем тексты', 'Строим сопоставимые частотные профили: одинаковая предобработка и общий набор признаков.'],
@@ -142,7 +142,7 @@ const research = {
     },
   },
   gwas: {
-    slug: 'from-genes-to-tokens', title: 'From Genes to Tokens', year: '2026',
+    slug: 'from-genes-to-tokens', title: 'From Genes to Tokens', pageTitle: 'From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis', year: '2026',
     formal: 'From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis',
     venue: 'arXiv:2606.09543 · Digital Humanities 2026.',
     preprint: urls.gwasPaper, code: urls.gwasCode,
@@ -150,29 +150,33 @@ const research = {
     imageSource: 'https://github.com/DDPronin/GWAS-stylometry/blob/main/imgs/manhattan_tolstoy.png',
     bib: '@misc{pronin2026genes,\n  author = {Pronin, Dmitry and Kazartsev, Evgeny},\n  title = {From Genes to Tokens: a GWAS-inspired Approach for Interpretable Stylometric Analysis},\n  year = {2026},\n  eprint = {2606.09543},\n  archivePrefix = {arXiv},\n  url = {https://arxiv.org/abs/2606.09543}\n}',
     en: {
-      subtitle: 'A statistical map of token associations with authorship.',
-      question: 'Instead of stopping at an authorship prediction, can we identify the individual tokens associated with an author in a corpus? This work adapts the logic of genome-wide association studies to text analysis.',
+      subtitle: '', overviewTitle: 'A five-second overview', briefTitle: 'In a nutshell',
+      question: 'We identify words whose frequencies are statistically associated with authorship, following the logic that GWAS uses to link genetic variants to traits.',
       steps: [
-        ['Test token associations', 'Fit token-level logistic regression models to examine associations with authorship.'],
-        ['Account for many tests', 'Testing thousands of tokens creates a multiple-comparison problem. Apply a correction before interpreting statistical significance.'],
-        ['Read the statistical map', 'Use Manhattan, volcano, and Q–Q plots to inspect significance, effect direction, and the behaviour of the tests.'],
+        ['Build comparable profiles', 'Lemmatize the texts and divide each work into non-overlapping chunks of 10,000 lemmas. The study analyses the 5,000 most frequent lemmas in each corpus and standardizes their frequencies.'],
+        ['Test one word at a time', 'Fit a separate logistic regression for each lemma: is its frequency associated with the chunk belonging to the author being studied rather than another author? The coefficient β indicates the direction and strength of that association.'],
+        ['Account for thousands of tests', 'Use the Bonferroni correction to make the significance threshold stricter. For example, with 5,000 tests and an overall level of 0.05, the threshold is 0.05 / 5,000 = 0.00001.'],
+        ['Check the pattern', 'Plot the word associations and compare the number of significant words with what arises after randomly shuffling authorship labels. In the paper, all three authors studied show more significant features than expected under random labelling.'],
       ],
-      figure: 'This Manhattan plot comes from the Tolstoy analysis. Each point is a token; its height represents −log₁₀(p). Green and red indicate positive and negative regression coefficients, while grey points are not significant under the displayed threshold. Height indicates statistical evidence, not effect size.',
-      alt: 'Manhattan plot for the Tolstoy analysis. Tokens appear along the horizontal axis and negative log-ten p-values on the vertical axis. A dashed line marks the significance threshold.',
-      limits: 'The method identifies statistical associations within a chosen corpus. Topic, genre, period, and corpus composition can also influence token use. An association does not establish a causal or universal marker of an author’s style. The work is available as a preprint and was presented at DH2026.',
+      figure: 'This Manhattan plot shows the analysis of Leo Tolstoy against the other authors in the Russian corpus. Each point is a lemma. Its horizontal position is its index in the feature list; its height, −log₁₀(p), represents evidence against the hypothesis of no association. Higher points have smaller p-values.',
+      figureCaption: 'Figure 4 from the paper: word associations with Tolstoy’s authorship. The dashed line is the significance threshold after multiple-testing correction.',
+      figureAfter: '<p><strong>Green:</strong> a higher word frequency is associated with Tolstoy. <strong>Red:</strong> a higher frequency is associated with the other authors. <strong>Grey:</strong> the association does not reach the corrected significance threshold. Colour shows direction; height shows statistical evidence, not effect size.</p><p>For instance, «сказать» (to say), «чувствовать» (to feel), «увидать» (to see), and «услыхать» (to hear) appear among the positive signals. They provide concrete starting points for reading how speech and perception are represented in these texts.</p><p>The study also finds lexical signals for H. G. Wells and Hermann Hesse in the English and German corpora. These associations describe the selected corpus; separating authorship from genre or period through additional model variables is a proposed next step.</p>',
+      alt: 'Manhattan plot comparing Tolstoy with other authors: green points have positive associations, red negative, and grey do not reach significance. A dashed line marks the corrected threshold.',
       start: 'The repository includes the analysis notebook, lemmatization code, dependencies, figures, and the DH2026 presentation. Start by reproducing a supplied example and checking the outcome labels and preprocessing before substituting your own texts.',
     },
     ru: {
-      subtitle: 'Статистическая карта связей между токенами и авторством.',
-      question: 'Можно ли не только предсказать автора, но и найти отдельные токены, связанные с его текстами в корпусе? В этой работе логика полногеномных исследований ассоциаций переносится в анализ литературных текстов.',
+      subtitle: '', overviewTitle: 'Обзор за 5 секунд', briefTitle: 'Краткое содержание',
+      question: 'Ищем слова, частота которых статистически связана с авторством, — по той же логике, по которой GWAS ищет связи генетических вариантов с признаками.',
       steps: [
-        ['Проверяем связи токенов', 'Используем логистическую регрессию на уровне отдельных токенов для анализа связи с авторством.'],
-        ['Учитываем число проверок', 'Тысячи токенов означают тысячи статистических проверок. Перед интерпретацией значимости нужна поправка на множественные сравнения.'],
-        ['Читаем статистическую карту', 'Manhattan-, volcano- и Q–Q-графики помогают оценить значимость, направление эффектов и поведение статистических тестов.'],
+        ['Готовим сопоставимые профили', 'Приводим слова к начальной форме и делим каждое произведение на непересекающиеся фрагменты по 10 000 лемм. В статье анализируем 5 000 самых частотных лемм каждого корпуса и стандартизируем их частоты.'],
+        ['Проверяем каждое слово отдельно', 'Для каждой леммы строим отдельную логистическую регрессию: связана ли её частота с тем, что фрагмент принадлежит изучаемому автору, а не кому-то из остальных? Коэффициент β показывает направление и силу этой связи.'],
+        ['Учитываем тысячи проверок', 'Используем поправку Бонферрони: делаем порог значимости строже с учётом числа проверок. Например, при 5 000 тестов и общем уровне 0,05 порог составит 0,05 / 5 000 = 0,00001.'],
+        ['Проверяем общую картину', 'Строим карту связей слов с авторством и сравниваем число значимых слов с результатом случайного перемешивания авторских меток. Для всех трёх изученных авторов в статье значимых признаков оказалось больше, чем ожидалось при случайной разметке.'],
       ],
-      figure: 'Manhattan-график из анализа текстов Толстого. Каждая точка — токен; высота соответствует −log₁₀(p). Зелёные и красные точки обозначают положительные и отрицательные коэффициенты регрессии; серые не достигают показанного порога значимости. Высота отражает статистическое свидетельство, а не размер эффекта.',
-      alt: 'Manhattan-график анализа текстов Толстого: по горизонтали токены, по вертикали минус десятичный логарифм p-значения. Пунктир обозначает порог значимости.',
-      limits: 'Метод выявляет статистические связи внутри выбранного корпуса. На использование слов также влияют тема, жанр, эпоха и состав данных. Связь не доказывает причинность и не даёт универсального маркера авторского стиля. Работа доступна как препринт и была представлена на DH2026.',
+      figure: 'На Manhattan-графике показан анализ Льва Толстого в сравнении с остальными авторами русского корпуса. Каждая точка — лемма. По горизонтали указан её номер в списке признаков; по вертикали — −log₁₀(p), мера статистического свидетельства против гипотезы об отсутствии связи. Чем выше точка, тем меньше p-значение.',
+      figureCaption: 'Рисунок 4 из статьи: связи слов с авторством Толстого. Пунктир — порог значимости после поправки на множественные проверки.',
+      figureAfter: '<p><strong>Зелёный:</strong> более высокая частота слова связана с Толстым. <strong>Красный:</strong> с остальными авторами. <strong>Серый:</strong> связь не достигает скорректированного порога значимости. Цвет показывает направление связи, высота — статистическую убедительность, а не размер эффекта.</p><p>Например, среди положительных сигналов видны «сказать», «чувствовать», «увидать», «услыхать». Это конкретные отправные точки для чтения: можно исследовать, как в этих текстах передаются речь и восприятие.</p><p>В статье также выявлены лексические сигналы Герберта Уэллса и Германа Гессе в английском и немецком корпусах. Эти связи описывают выбранные данные; отделение авторства от жанра и эпохи с помощью дополнительных переменных модели предложено как следующий шаг.</p>',
+      alt: 'Manhattan-график сравнения Толстого с другими авторами: зелёные точки — положительные связи, красные — отрицательные, серые не достигают значимости. Пунктир обозначает скорректированный порог.',
       start: 'В репозитории есть ноутбук анализа, код лемматизации, зависимости, иллюстрации и презентация DH2026. Сначала воспроизведите готовый пример и проверьте разметку авторства и предобработку, затем подставляйте собственные тексты.',
     },
   },
@@ -240,7 +244,7 @@ function rankBrief(lang,c) {
     <p class="formula-note">Здесь и далее используем Дельту без деления на число выбранных слов <i>n</i>. При фиксированном наборе слов это меняет только масштаб, но не порядок расстояний.</p>
     <p>Каждая координата <i>z</i> — частота одного слова, приведённая к общему масштабу. Из относительной частоты <i>p</i> вычитаем среднюю по корпусу <i>μ</i> и делим на стандартное отклонение <i>σ</i> этого слова:</p>
     ${standard}
-    <p>До финального суммирования расстояние рассчитывается отдельно для каждого слова. Это и есть манхэттенское расстояние между стандартизированными TF-векторами текстов. При вычитании среднее сокращается, и вклад слова <i>i</i> можно записать так:</p>
+    <p>До финального суммирования расстояние рассчитывается отдельно для каждого слова. При вычитании среднее сокращается, и вклад слова <i>i</i> можно записать так:</p>
     ${parts}${total}
     <p>Значит, можно оценить вклад каждого слова, сравнить его с остальными и выделить наиболее сильные лексические сигналы, по которым метод различает стили.</p>
     <details class="worked-example"><summary>Условный пример на трёх словах</summary><p>Возьмём два условных текста. Числа ниже придуманы для объяснения формулы и не являются результатами сравнения писателей.</p>
@@ -254,7 +258,7 @@ function rankBrief(lang,c) {
     <p class="formula-note">Throughout this explanation, we omit division by the number of selected words, <i>n</i>. For a fixed word set, this changes the scale but not the ordering of distances.</p>
     <p>Each coordinate <i>z</i> is a word frequency expressed on a common scale: subtract the corpus mean <i>μ</i> from the relative frequency <i>p</i>, then divide by that word’s standard deviation <i>σ</i>:</p>
     ${standard}
-    <p>Before the final sum, the distance is calculated separately for each word. This is the Manhattan distance between standardized term-frequency vectors. The mean cancels in the subtraction, so the contribution of word <i>i</i> can be written as:</p>
+    <p>Before the final sum, the distance is calculated separately for each word. The mean cancels in the subtraction, so the contribution of word <i>i</i> can be written as:</p>
     ${parts}${total}
     <p>We can therefore quantify each word’s contribution, compare it with the others, and identify the strongest lexical signals by which the method distinguishes writing styles.</p>
     <details class="worked-example"><summary>A worked example with three words</summary><p>Consider two hypothetical texts. These numbers illustrate the formula; they are not results from a comparison of writers.</p>
@@ -264,13 +268,35 @@ function rankBrief(lang,c) {
   `}</section>`;
 }
 
+function gwasBrief(lang,c) {
+  return `<section id="brief"><h2>${c.briefTitle}</h2>${lang==='ru'?`
+    <p>Можно ли искать авторские особенности так же, как генетики ищут варианты ДНК, связанные с ростом или заболеванием? В GWAS каждый генетический маркер проверяют отдельно. Мы переносим эту логику на язык: маркером становится частота слова, а изучаемым признаком — авторство текста.</p>
+    <p>Берём тексты с известными авторами, делим их на сопоставимые фрагменты и считаем частоты слов. Затем выбираем писателя и для каждого слова задаём один вопрос: меняется ли вероятность того, что фрагмент принадлежит этому автору, вместе с частотой слова?</p>
+    <p>Так получаем карту лексических ассоциаций. У каждого слова есть направление и сила связи — коэффициент <i>β</i> — и <i>p</i>-значение для проверки гипотезы, что связи нет. Поправка на тысячи одновременно проверяемых слов помогает отсеять случайные находки. В результате можно увидеть и слова, характерные для автора, и те, которые сравнительно редко встречаются в его текстах.</p>
+    <details class="worked-example" open><summary>Пример: что слово «чувствовать» говорит о Толстом?</summary>
+    <p>Помечаем фрагменты Толстого числом 1, фрагменты остальных писателей — 0. Для каждого фрагмента берём стандартизированную частоту леммы «чувствовать» и строим модель только с этим словом.</p>
+    <p>Положительный коэффициент означает: чем выше частота, тем выше оценённая моделью вероятность метки «Толстой». Отрицательный показал бы обратную связь. Если проверка проходит скорректированный порог значимости, слово попадает в список авторских сигналов.</p>
+    <p>В результатах статьи «чувствовать» действительно находится среди положительных сигналов Толстого. Это позволяет перейти к литературоведческому вопросу: в каких сценах, сочетаниях и повествовательных функциях возникает это слово?</p></details>
+    <p class="formula-note">Подход и результаты описаны в <a href="https://arxiv.org/pdf/2606.09543#page=2">разделах 2–3 статьи</a>. Работа представлена на DH2026 и доступна как препринт.</p>
+  `:`
+    <p>Can we look for features of writing style in the same way that geneticists look for DNA variants associated with height or disease? GWAS tests each genetic marker separately. We transfer that logic to language: word frequency becomes the marker, and authorship becomes the trait of interest.</p>
+    <p>We take texts with known authors, split them into comparable chunks, and count word frequencies. We then choose an author and ask the same question for every word: does the probability that a chunk belongs to this author vary with that word’s frequency?</p>
+    <p>The result is a map of lexical associations. Each word receives a coefficient, <i>β</i>, indicating the direction and strength of the association, and a <i>p</i>-value for testing the hypothesis of no association. Correcting for the thousands of words tested helps filter out chance findings. The map reveals both words characteristic of an author and words used comparatively rarely in that author’s texts.</p>
+    <details class="worked-example" open><summary>An example: what does “to feel” tell us about Tolstoy?</summary>
+    <p>Label Tolstoy’s chunks 1 and the other writers’ chunks 0. For each chunk, take the standardized frequency of «чувствовать» (to feel) and fit a model using that word alone.</p>
+    <p>A positive coefficient means that a higher frequency corresponds to a higher model-estimated probability of the Tolstoy label. A negative coefficient would indicate the reverse association. If the test passes the corrected significance threshold, the word becomes a candidate authorial signal.</p>
+    <p>In the paper’s results, «чувствовать» is indeed a positive signal for Tolstoy. This leads to a literary question: in which scenes, combinations, and narrative functions does the word appear?</p></details>
+    <p class="formula-note">See <a href="https://arxiv.org/pdf/2606.09543#page=2">Sections 2–3 of the paper</a> for the method and results. The work was presented at DH2026 and is available as a preprint.</p>
+  `}</section>`;
+}
+
 function researchPage(lang,key) {
   const r=research[key], c=r[lang], t=text[lang];
   const other=key==='rank'?'gwas':'rank';
-  const sections=key==='rank' ? [['question',c.overviewTitle],['brief',c.briefTitle],['method',t.method],['figure',t.figure],['start',t.start]] : ['question','method','figure','limits','start'].map(id=>[id,t[id]]);
+  const sections=[['question',c.overviewTitle],['brief',c.briefTitle],['method',t.method],['figure',t.figure],['start',t.start]];
   return document(lang,key,({rel,local})=>`
   <header class="article-header wrap">${link(local(home(lang))+'#research',`← ${t.back}`,'back-link')}<p class="eyebrow">${key==='rank'?t.journal:t.preprint}</p><h1>${r.pageTitle || r.title}</h1>${c.subtitle?`<p class="article-subtitle">${c.subtitle}</p>`:''}<p class="authors">${t.authors}</p>${resourceLinks(r,t)}</header>
-  <div class="article-body wrap"><aside class="article-toc"><span class="section-label">${lang==='ru'?'В этом разборе':'In this explanation'}</span><nav aria-label="${lang==='ru'?'Разделы исследования':'Research sections'}">${sections.map(([id,label])=>link('#'+id,label)).join('')}</nav></aside><div class="article-content"><section id="question"><h2>${c.overviewTitle || t.question}</h2><p class="lead">${c.question}</p></section>${key==='rank'?rankBrief(lang,c):''}<section id="method"><h2>${t.method}</h2><ol class="method-steps">${c.steps.map(([title,body])=>`<li><h3>${title}</h3><p>${body}</p></li>`).join('')}</ol></section><section id="figure"><h2>${t.figure}</h2><p>${c.figure}</p><figure><a href="${rel}assets/${r.image}" aria-label="${t.fullSize}"><img src="${rel}assets/${r.image}" alt="${esc(c.alt)}" width="${r.imageWidth}" height="${r.imageHeight}" loading="lazy"></a><figcaption>${c.figureCaption?esc(c.figureCaption)+' <br>':''}${link(`${rel}assets/${r.image}`,t.fullSize)} · ${link(r.imageSource,t.source)}</figcaption></figure>${c.figureAfter || ''}</section>${key==='rank'?'':`<section id="limits"><h2>${t.limits}</h2><p>${c.limits}</p></section>`}<section id="start"><h2>${t.start}</h2><p>${c.start}</p>${link(r.code,`${t.code} ↗`,'primary-link')}</section><section class="citation" id="citation"><h2>${t.bib}</h2><p>${esc(r.formal)}. ${r.venue}</p><details><summary>BibTeX</summary><button class="copy-button" type="button" data-copy="citation-bib" data-copied="${t.copied}" data-failed="${lang==='ru'?'Выделите и скопируйте текст ниже':'Select and copy the text below'}">${t.copy}</button><pre id="citation-bib"><code>${esc(r.bib)}</code></pre><span class="copy-status" aria-live="polite"></span></details>${resourceLinks(r,t)}</section><div class="related"><p class="meta">${t.next}</p><h3>${link(local(route(lang,other)),research[other].title+' →')}</h3></div></div></div>`,
+  <div class="article-body wrap"><aside class="article-toc"><span class="section-label">${lang==='ru'?'В этом разборе':'In this explanation'}</span><nav aria-label="${lang==='ru'?'Разделы исследования':'Research sections'}">${sections.map(([id,label])=>link('#'+id,label)).join('')}</nav></aside><div class="article-content"><section id="question"><h2>${c.overviewTitle || t.question}</h2><p class="lead">${c.question}</p></section>${key==='rank'?rankBrief(lang,c):gwasBrief(lang,c)}<section id="method"><h2>${t.method}</h2><ol class="method-steps">${c.steps.map(([title,body])=>`<li><h3>${title}</h3><p>${body}</p></li>`).join('')}</ol></section><section id="figure"><h2>${t.figure}</h2><p>${c.figure}</p><figure><a href="${rel}assets/${r.image}" aria-label="${t.fullSize}"><img src="${rel}assets/${r.image}" alt="${esc(c.alt)}" width="${r.imageWidth}" height="${r.imageHeight}" loading="lazy"></a><figcaption>${c.figureCaption?esc(c.figureCaption)+' <br>':''}${link(`${rel}assets/${r.image}`,t.fullSize)} · ${link(r.imageSource,t.source)}</figcaption></figure>${c.figureAfter || ''}</section><section id="start"><h2>${t.start}</h2><p>${c.start}</p>${link(r.code,`${t.code} ↗`,'primary-link')}</section><section class="citation" id="citation"><h2>${t.bib}</h2><p>${esc(r.formal)}. ${r.venue}</p><details><summary>BibTeX</summary><button class="copy-button" type="button" data-copy="citation-bib" data-copied="${t.copied}" data-failed="${lang==='ru'?'Выделите и скопируйте текст ниже':'Select and copy the text below'}">${t.copy}</button><pre id="citation-bib"><code>${esc(r.bib)}</code></pre><span class="copy-status" aria-live="polite"></span></details>${resourceLinks(r,t)}</section><div class="related"><p class="meta">${t.next}</p><h3>${link(local(route(lang,other)),research[other].title+' →')}</h3></div></div></div>`,
   {title:`${r.pageTitle || r.title} — ${t.name}`,description:c.subtitle || c.question});
 }
 
