@@ -1,0 +1,9 @@
+# Sources
+
+Google, ‘Influencing Your Title Links in Search Results’, *Google Search Central* <https://developers.google.com/search/docs/appearance/title-link> [accessed 17 September 2026].
+
+Used to align the document title, visible page heading, Open Graph title, and structured-data page name.
+
+Google, ‘Get Your Website on Google’, *Google Search Central* <https://developers.google.com/search/docs/fundamentals/get-on-google> [accessed 17 September 2026].
+
+Used for the indexing and external-link recommendations associated with this site update.

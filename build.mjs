@@ -214,7 +214,7 @@ function mainPage(lang) {
   <section class="platform-section wrap" id="sociolit"><div><p class="eyebrow">${t.platformLabel}</p><h2>${t.platformTitle}</h2>${link('https://sociolit.ru/',t.platformLink+' ↗','primary-link')}</div><div class="platform-copy"><p class="platform-intro">${t.platformIntro}</p><p>${t.platformBody}</p><ul>${t.platformFeatures.map(s=>`<li>${s}</li>`).join('')}</ul><p>${t.platformRole}</p></div></section>
   <section class="writing-section" id="writing"><div class="wrap"><div class="section-heading"><h2>${t.writing}</h2><p>${t.writingSub}</p></div><div class="writing-grid">${t.guides.map(([title,meta,url,description])=>`<article><p class="meta">${meta}</p><h3>${link(url,title+' <span aria-hidden="true">↗</span>')}</h3><p class="writing-summary">${esc(description)}</p><p class="publication-name">${lang==='ru'?'Системный Блокъ':'System Block · In Russian'}</p></article>`).join('')}</div>${link(urls.media,`${t.allWriting} ↗`,'read-link')}</div></section>
   <section class="wrap contact-section" id="contact"><p class="eyebrow">${t.nav[3]}</p><h2>${t.contact}</h2><p>${t.contactBody}</p><div class="hero-links">${config.email?link('mailto:'+config.email,esc(config.email),'primary-link'):''}${link(urls.telegram,'Telegram ↗','primary-link')}${link(urls.hse,lang==='ru'?'Профиль ВШЭ ↗':'HSE profile ↗')}</div></section>`,
-  {title:`${t.name} — ${lang==='ru'?'стилометрия и digital humanities':'stylometry & digital humanities'}`,description:t.intro});
+  {title:`${t.name} | ${lang==='ru'?'Интерпретируемая цифровая стилометрия':'Interpretable Digital Stylometry'}`,description:t.intro});
 }
 
 function cvPage(lang) {
