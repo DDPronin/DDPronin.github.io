@@ -18,3 +18,5 @@ User approved adding `https://habr.com/ru/articles/1088162/` to the popular-writ
 Source: Habr article by Dmitry Pronin, published 29 September 2026. Metadata came from Habr's article page/API. `node build.mjs` generated eight pages; only `index.html` and `ru/index.html` have content diffs. A PowerShell check confirmed the heading, Habr URL, source label and five cards on each home page. The first `node -e` verification attempt failed because PowerShell broke the regular expression; the PowerShell check passed. Clone initially failed under sandbox networking, then succeeded with network escalation.
 
 Published code commit `d57d7ad` to `main`. Direct HTTP checks of `https://ddpronin.github.io/` and `/ru/` returned 200 and confirmed the new heading and Habr link on both live pages.
+
+Follow-up on 29 September 2026: user requested that the writing subtitle contain only the subject line. Changed `writingSub` to `О языке, литературе и нейросетях.` and `On language, literature, and neural networks.`. Rebuilt eight pages and checked both generated home pages for the exact new text and absence of the old subtitle.

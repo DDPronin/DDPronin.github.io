@@ -45,7 +45,7 @@ const text = {
     read: 'Read the explanation', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'DH2026 presentation · 2026',
     publications: 'Selected publications', allPubs: 'Full list on Google Scholar', authors: 'Dmitry Pronin and Evgeny Kazartsev',
     paper: 'Publisher', open: 'Open preprint', code: 'Code & notebooks',
-    writing: 'Explainers and essays', writingSub: 'Guides and essays on language, literature, and AI. All articles are in Russian.',
+    writing: 'Explainers and essays', writingSub: 'On language, literature, and neural networks.',
     guides: [
       ['What distance measures reveal: from kNN and k-means to stylometry', 'Explainer · September 2026', 'https://habr.com/ru/articles/1088162/', 'How feature contributions explain decisions in kNN and k-means and help interpret comparisons between texts.', 'Habr · In Russian'],
       ['A practical guide to sentiment analysis', 'Tutorial · December 2024', 'https://sysblok.ru/courses/kak-provesti-analiz-tonalnosti-teksta/', 'How to chart a novel’s emotional tone with Python and a neural model, using A Hero of Our Time.'],
@@ -84,7 +84,7 @@ const text = {
     read: 'Как работает метод', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'Доклад на DH2026 · 2026',
     publications: 'Избранные публикации', allPubs: 'Полный список в Google Scholar', authors: 'Дмитрий Пронин и Евгений Казарцев',
     paper: 'У издателя', open: 'Открытый препринт', code: 'Код и ноутбуки',
-    writing: 'Разборы и эссе', writingSub: 'О языке, литературе и нейросетях. Гайды и эссе.',
+    writing: 'Разборы и эссе', writingSub: 'О языке, литературе и нейросетях.',
     guides: [
       ['Что скрывают в себе меры расстояния: от kNN и k‑means до стилометрии', 'Разбор · сентябрь 2026', 'https://habr.com/ru/articles/1088162/', 'Как по вкладам отдельных признаков понять решения kNN и k‑means и интерпретировать сравнение текстов.', 'Хабр'],
       ['Как провести анализ тональности текста', 'Руководство · декабрь 2024', 'https://sysblok.ru/courses/kak-provesti-analiz-tonalnosti-teksta/', 'Как построить кривую эмоциональной тональности книги с помощью Python и нейросети на примере «Героя нашего времени».'],
