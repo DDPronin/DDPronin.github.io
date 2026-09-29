@@ -9,4 +9,10 @@
 
 ## Verification
 
-Run `node build.mjs`, then `node ../check-site.mjs`. Inspect `git diff` before publishing.
+Run `node build.mjs`, check the generated home pages for the heading, Habr link, source label and card count, then inspect `git diff` before publishing.
+
+## Habr card, 29 September 2026
+
+User approved adding `https://habr.com/ru/articles/1088162/` to the popular-writing grid with section title `Разборы и эссе` (`Explainers and essays` in English). The existing four cards are from System Block; their source label was hardcoded in `mainPage`. Added the Habr card first in each language and an optional fifth tuple value for its source label. Kept the System Block author-page link.
+
+Source: Habr article by Dmitry Pronin, published 29 September 2026. Metadata came from Habr's article page/API. `node build.mjs` generated eight pages; only `index.html` and `ru/index.html` have content diffs. A PowerShell check confirmed the heading, Habr URL, source label and five cards on each home page. The first `node -e` verification attempt failed because PowerShell broke the regular expression; the PowerShell check passed. Clone initially failed under sandbox networking, then succeeded with network escalation.
