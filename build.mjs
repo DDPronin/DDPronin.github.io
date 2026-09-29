@@ -45,7 +45,7 @@ const text = {
     read: 'Read the explanation', journal: 'Digital Scholarship in the Humanities · 2026', preprint: 'DH2026 presentation · 2026',
     publications: 'Selected publications', allPubs: 'Full list on Google Scholar', authors: 'Dmitry Pronin and Evgeny Kazartsev',
     paper: 'Publisher', open: 'Open preprint', code: 'Code & notebooks',
-    writing: 'Explainers and essays', writingSub: 'On language, literature, and neural networks.',
+    writing: 'Guides and esseys', writingSub: 'On language, literature, and neural networks.',
     guides: [
       ['What distance measures reveal: from kNN and k-means to stylometry', 'Explainer · September 2026', 'https://habr.com/ru/articles/1088162/', 'How feature contributions explain decisions in kNN and k-means and help interpret comparisons between texts.', 'Habr · In Russian'],
       ['A practical guide to sentiment analysis', 'Tutorial · December 2024', 'https://sysblok.ru/courses/kak-provesti-analiz-tonalnosti-teksta/', 'How to chart a novel’s emotional tone with Python and a neural model, using A Hero of Our Time.'],
