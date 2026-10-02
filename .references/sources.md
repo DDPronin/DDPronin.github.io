@@ -15,3 +15,9 @@ Used for the indexing and external-link recommendations associated with this sit
 Pronin, Dmitry, "Что скрывают в себе меры расстояния: от kNN и k‑means до стилометрии", *Хабр* (29 September 2026) <https://habr.com/ru/articles/1088162/> [accessed 29 September 2026].
 
 Used the title, publication date, and topic for the Habr card on both home pages.
+
++++
+
+Google, "[GA4] Set up Analytics for a website and/or app", *Google Analytics Help* <https://support.google.com/analytics/answer/14183469?hl=en> [accessed 3 October 2026].
+
+Used to verify manual placement of the user-provided Google tag in the shared page head.

@@ -20,3 +20,7 @@ Source: Habr article by Dmitry Pronin, published 29 September 2026. Metadata cam
 Published code commit `d57d7ad` to `main`. Direct HTTP checks of `https://ddpronin.github.io/` and `/ru/` returned 200 and confirmed the new heading and Habr link on both live pages.
 
 Follow-up on 29 September 2026: user requested that the writing subtitle contain only the subject line. Changed `writingSub` to `О языке, литературе и нейросетях.` and `On language, literature, and neural networks.`. Rebuilt eight pages and checked both generated home pages for the exact new text and absence of the old subtitle.
+
+## Google Analytics, 3 October 2026
+
+User provided the exact Google tag for measurement ID `G-VGW93F30CH`. The site has one `document()` head template in `build.mjs`, so added the tag there without new dependencies. `node --check build.mjs` and `node build.mjs` passed. Checked all eight generated `index.html` pages: each has exactly one loader URL and one `gtag('config', ...)` call. The standalone `404.html` is outside this template.
